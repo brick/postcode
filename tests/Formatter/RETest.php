@@ -29,6 +29,7 @@ class RETest extends CountryTest
             ['1', null],
             ['12', null],
             ['123', null],
+            ['1234', null],
             ['12345', null],
             ['123456', null],
 
@@ -40,8 +41,11 @@ class RETest extends CountryTest
             ['ABCDEF', null],
 
             ['97000', null],
+            ['97399', null],
             ['97400', '97400'],
-            ['97412', '97412']
+            ['97412', '97412'],
+            ['97499', '97499'],
+            ['97500', null],
         ];
     }
 }
