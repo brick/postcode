@@ -15,6 +15,7 @@ class PostcodeFormatterTest extends TestCase
 {
     /**
      * @expectedException \Brick\Postcode\UnknownCountryException
+     * @expectedExceptionMessage Unknown country: XX
      *
      * @return void
      */
@@ -25,6 +26,7 @@ class PostcodeFormatterTest extends TestCase
 
     /**
      * @expectedException \Brick\Postcode\UnknownCountryException
+     * @expectedExceptionMessage Unknown country: XX
      *
      * @return void
      */
