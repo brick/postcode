@@ -32,13 +32,14 @@ class PostcodeFormatter
      * @return string
      *
      * @throws InvalidPostcodeException
+     * @throws UnknownCountryException
      */
     public function formatPostcode(string $country, string $postcode) : string
     {
         $postcode = $this->doFormatPostcode($country, $postcode);
 
         if ($postcode === null) {
-            throw new InvalidPostcodeException();
+            throw new InvalidPostcodeException('Invalid postcode: ' . $postcode);
         }
 
         return $postcode;
@@ -62,7 +63,7 @@ class PostcodeFormatter
      *
      * @return CountryPostcodeFormatter
      *
-     * @throws \InvalidArgumentException
+     * @throws UnknownCountryException
      */
     private function getFormatter(string $country) : CountryPostcodeFormatter
     {
@@ -70,7 +71,7 @@ class PostcodeFormatter
             $class = __NAMESPACE__ . '\\Formatter\\' . $country;
 
             if (! class_exists($class)) {
-                throw new \InvalidArgumentException('Unknown country.');
+                throw new UnknownCountryException('Unknown country: ' . $country);
             }
 
             $this->formatters[$country] = new $class();

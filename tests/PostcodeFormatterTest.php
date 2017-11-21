@@ -12,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 class PostcodeFormatterTest extends TestCase
 {
     /**
-     * @expectedException \InvalidArgumentException
+     * @expectedException \Brick\Postcode\UnknownCountryException
      */
     public function testIsValidWithUnknownCountryThrowsException()
     {
@@ -20,7 +20,7 @@ class PostcodeFormatterTest extends TestCase
     }
 
     /**
-     * @expectedException \InvalidArgumentException
+     * @expectedException \Brick\Postcode\UnknownCountryException
      */
     public function testFormatWithUnknownCountryThrowsException()
     {
