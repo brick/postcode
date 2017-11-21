@@ -1,0 +1,23 @@
+{
+  "name": "brick/postcode",
+  "description": "A library to format and validate postcodes",
+  "type": "library",
+  "keywords": [
+    "Brick",
+    "Postcode"
+  ],
+  "license": "MIT",
+  "require": {
+    "php": ">=7.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "6.*",
+    "satooshi/php-coveralls": "1.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Brick\\Postcode\\": "src/",
+      "Brick\\Postcode\\Tests\\": "tests/"
+    }
+  }
+}
