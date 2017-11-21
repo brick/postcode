@@ -38,13 +38,13 @@ class PostcodeFormatter
      */
     public function formatPostcode(string $country, string $postcode) : string
     {
-        $postcode = $this->doFormatPostcode($country, $postcode);
+        $formatted = $this->doFormatPostcode($country, $postcode);
 
-        if ($postcode === null) {
+        if ($formatted === null) {
             throw new InvalidPostcodeException('Invalid postcode: ' . $postcode);
         }
 
-        return $postcode;
+        return $formatted;
     }
 
     /**

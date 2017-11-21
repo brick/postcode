@@ -87,11 +87,12 @@ class PostcodeFormatterTest extends TestCase
 
     /**
      * @expectedException \Brick\Postcode\InvalidPostcodeException
+     * @expectedExceptionMessage Invalid postcode: ABC
      *
      * @return void
      */
     public function testFormatWithInvalidPostcodeThrowsException() : void
     {
-        (new PostcodeFormatter())->formatPostcode('GB', '');
+        (new PostcodeFormatter())->formatPostcode('GB', 'ABC');
     }
 }
