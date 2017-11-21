@@ -47,9 +47,9 @@ class PostcodeFormatterTest extends TestCase
      */
     public function testIsValid(string $country, string $postcode, bool $cleanup, bool $isValid) : void
     {
-        $formatter = new PostcodeFormatter($cleanup);
+        $formatter = new PostcodeFormatter();
 
-        $this->assertSame($isValid, $formatter->isValidPostcode($country, $postcode));
+        $this->assertSame($isValid, $formatter->isValidPostcode($country, $postcode, $cleanup));
     }
 
     /**
@@ -84,9 +84,9 @@ class PostcodeFormatterTest extends TestCase
      */
     public function testFormat(string $country, string $postcode, string $expectedOutput) : void
     {
-        $formatter = new PostcodeFormatter(true);
+        $formatter = new PostcodeFormatter();
 
-        $this->assertSame($expectedOutput, $formatter->formatPostcode($country, $postcode));
+        $this->assertSame($expectedOutput, $formatter->formatPostcode($country, $postcode, true));
     }
 
     /**
