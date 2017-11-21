@@ -17,6 +17,24 @@ class PostcodeFormatter
     private $formatters = [];
 
     /**
+     * Whether to clean up non-alphanumeric characters from postcodes prior to validation.
+     *
+     * @var bool
+     */
+    private $cleanupPostcodes;
+
+    /**
+     * Class constructor.
+     *
+     * @param bool $cleanupPostcodes Whether to clean up non-alphanumeric characters from postcodes prior to validation.
+     *                               This allows the formatter to accept (potentially improperly) formatted postcodes.
+     */
+    public function __construct(bool $cleanupPostcodes = false)
+    {
+        $this->cleanupPostcodes = $cleanupPostcodes;
+    }
+
+    /**
      * @param string $country  The 2-letter ISO 3166-1 alpha-2 country code.
      * @param string $postcode The postcode to validate.
      *
@@ -55,7 +73,9 @@ class PostcodeFormatter
      */
     private function doFormatPostcode(string $country, string $postcode) : ?string
     {
-        $postcode = preg_replace('/[^a-zA-Z0-9]/', '', $postcode);
+        if ($this->cleanupPostcodes) {
+            $postcode = preg_replace('/[^a-zA-Z0-9]/', '', $postcode);
+        }
 
         return $this->getFormatter($country)->format($postcode);
     }
