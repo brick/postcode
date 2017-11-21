@@ -50,4 +50,6 @@ $formatter->format('GB', 'WC2E9RZ'); // WC2E 9RZ
 $formatter->format('US', '337014313'); // 33701-4313
 ```
 
-Calling `format()` on an invalid postcode throws an [InvalidPostcodeException](https://github.com/brick/postcode/blob/master/src/InvalidPostcodeException.php).
+Calling `format()` with an invalid postcode throws an [InvalidPostcodeException](https://github.com/brick/postcode/blob/master/src/InvalidPostcodeException.php).
+
+Calling `isValidPostcode()` or `format()` with an unknown country code throws an [UnknownCountryException](https://github.com/brick/postcode/blob/master/src/UnknownCountryException.php).
