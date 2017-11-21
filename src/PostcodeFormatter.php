@@ -39,6 +39,8 @@ class PostcodeFormatter
      * @param string $postcode The postcode to validate.
      *
      * @return bool
+     *
+     * @throws UnknownCountryException
      */
     public function isValidPostcode(string $country, string $postcode) : bool
     {
@@ -70,6 +72,8 @@ class PostcodeFormatter
      * @param string $postcode
      *
      * @return string|null
+     *
+     * @throws UnknownCountryException
      */
     private function doFormatPostcode(string $country, string $postcode) : ?string
     {
