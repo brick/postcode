@@ -2,8 +2,9 @@
 
 namespace Brick\Postcode\Tests\Formatter;
 
-use Brick\Postcode\Tests\CountryTest;
+use Brick\Postcode\CountryPostcodeFormatter;
 use Brick\Postcode\Formatter\GB;
+use Brick\Postcode\Tests\CountryTest;
 
 /**
  * Unit tests for the GB postcode formatter.
@@ -13,7 +14,7 @@ class GBTest extends CountryTest
     /**
      * {@inheritdoc}
      */
-    public function getFormatter()
+    public function getFormatter() : CountryPostcodeFormatter
     {
         return new GB();
     }
@@ -21,7 +22,7 @@ class GBTest extends CountryTest
     /**
      * {@inheritdoc}
      */
-    public function postcodeProvider()
+    public function providerPostcode() : array
     {
         return [
             ['', null],

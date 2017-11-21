@@ -13,36 +13,42 @@ class PostcodeFormatterTest extends TestCase
 {
     /**
      * @expectedException \Brick\Postcode\UnknownCountryException
+     *
+     * @return void
      */
-    public function testIsValidWithUnknownCountryThrowsException()
+    public function testIsValidWithUnknownCountryThrowsException() : void
     {
         (new PostcodeFormatter())->isValidPostcode('XX', '');
     }
 
     /**
      * @expectedException \Brick\Postcode\UnknownCountryException
+     *
+     * @return void
      */
-    public function testFormatWithUnknownCountryThrowsException()
+    public function testFormatWithUnknownCountryThrowsException() : void
     {
         (new PostcodeFormatter())->formatPostcode('XX', '');
     }
 
     /**
-     * @dataProvider isValidProvider
+     * @dataProvider providerIsValid
      *
-     * @param string  $country
-     * @param string  $postcode
-     * @param boolean $isValid
+     * @param string $country
+     * @param string $postcode
+     * @param bool   $isValid
+     *
+     * @return void
      */
-    public function testIsValid($country, $postcode, $isValid)
+    public function testIsValid(string $country, string $postcode, bool $isValid) : void
     {
-        $this->assertSame($isValid, ((new PostcodeFormatter())->isValidPostcode($country, $postcode)));
+        $this->assertSame($isValid, (new PostcodeFormatter())->isValidPostcode($country, $postcode));
     }
 
     /**
      * @return array
      */
-    public function isValidProvider()
+    public function providerIsValid() : array
     {
         return [
             ['GB', '', false],
@@ -53,13 +59,15 @@ class PostcodeFormatterTest extends TestCase
     }
 
     /**
-     * @dataProvider formatProvider
+     * @dataProvider providerFormat
      *
      * @param string $country
      * @param string $postcode
      * @param string $expectedOutput
+     *
+     * @return void
      */
-    public function testFormat($country, $postcode, $expectedOutput)
+    public function testFormat(string $country, string $postcode, string $expectedOutput) : void
     {
         $this->assertSame($expectedOutput, ((new PostcodeFormatter())->formatPostcode($country, $postcode)));
     }
@@ -67,7 +75,7 @@ class PostcodeFormatterTest extends TestCase
     /**
      * @return array
      */
-    public function formatProvider()
+    public function providerFormat() : array
     {
         return [
             ['GB', ' - WC 2E - 9RZ - ', 'WC2E 9RZ'],
@@ -77,8 +85,10 @@ class PostcodeFormatterTest extends TestCase
 
     /**
      * @expectedException \Brick\Postcode\InvalidPostcodeException
+     *
+     * @return void
      */
-    public function testFormatWithInvalidPostcodeThrowsException()
+    public function testFormatWithInvalidPostcodeThrowsException() : void
     {
         (new PostcodeFormatter())->formatPostcode('GB', '');
     }
