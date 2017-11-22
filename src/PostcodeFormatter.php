@@ -82,6 +82,8 @@ class PostcodeFormatter
      */
     private function getFormatter(string $country) : CountryPostcodeFormatter
     {
+        $country = strtoupper($country);
+
         if (! isset($this->formatters[$country])) {
             $class = __NAMESPACE__ . '\\Formatter\\' . $country;
 
