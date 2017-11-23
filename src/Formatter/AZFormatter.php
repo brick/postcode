@@ -1,0 +1,38 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Brick\Postcode\Formatter;
+
+use Brick\Postcode\CountryPostcodeFormatter;
+
+/**
+ * Validates and formats postcodes in Azerbaijan.
+ *
+ * The postcode format is AZ NNNN, where N represents a digit.
+ * This formatter accepts postcodes with and without the AZ prefix, and always outputs the prefix.
+ *
+ * @see https://en.wikipedia.org/wiki/Postal_codes_in_Azerbaijan
+ */
+class AZFormatter implements CountryPostcodeFormatter
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function format(string $postcode) : ?string
+    {
+        if (substr($postcode, 0, 2) === 'AZ') {
+            $postcode = substr($postcode, 2);
+        }
+
+        if (strlen($postcode) !== 4) {
+            return null;
+        }
+
+        if (! ctype_digit($postcode)) {
+            return null;
+        }
+
+        return 'AZ ' . $postcode;
+    }
+}
