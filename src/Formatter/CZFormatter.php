@@ -17,7 +17,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * - The third and, if necessary, other digits are used to distinguish
  *   the post office and eventually post office boxes.
  */
-class CZ implements CountryPostcodeFormatter
+class CZFormatter implements CountryPostcodeFormatter
 {
     /**
      * {@inheritdoc}

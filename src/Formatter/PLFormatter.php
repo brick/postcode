@@ -16,7 +16,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * - The three digits after the dash represents the post office, or in the case of large cities,
  *   a particular street, part of the street or even separate address.
  */
-class PL implements CountryPostcodeFormatter
+class PLFormatter implements CountryPostcodeFormatter
 {
     /**
      * {@inheritdoc}

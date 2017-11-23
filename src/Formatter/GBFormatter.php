@@ -22,7 +22,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  *
  * The first part is called the outcode, the second part is called the incode.
  */
-class GB implements CountryPostcodeFormatter
+class GBFormatter implements CountryPostcodeFormatter
 {
     /**
      * The regular expression pattern used to validate the postcode and extract the outcode and incode.

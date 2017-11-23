@@ -11,7 +11,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  *
  * Postcodes consist of 5 digits, without separator.
  */
-class FR implements CountryPostcodeFormatter
+class FRFormatter implements CountryPostcodeFormatter
 {
     /**
      * {@inheritdoc}

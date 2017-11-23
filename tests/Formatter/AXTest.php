@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Brick\Postcode\Tests\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
-use Brick\Postcode\Formatter\AX;
+use Brick\Postcode\Formatter\AXFormatter;
 use Brick\Postcode\Tests\CountryTest;
 
 /**
@@ -18,7 +18,7 @@ class AXTest extends CountryTest
      */
     public function getFormatter() : CountryPostcodeFormatter
     {
-        return new AX();
+        return new AXFormatter();
     }
 
     /**

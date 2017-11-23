@@ -85,7 +85,7 @@ class PostcodeFormatter
         $country = strtoupper($country);
 
         if (! isset($this->formatters[$country])) {
-            $class = __NAMESPACE__ . '\\Formatter\\' . $country;
+            $class = __NAMESPACE__ . '\\Formatter\\' . $country . 'Formatter';
 
             if (! class_exists($class)) {
                 throw new UnknownCountryException('Unknown country: ' . $country);

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Brick\Postcode\Tests\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
-use Brick\Postcode\Formatter\DZ;
+use Brick\Postcode\Formatter\DZFormatter;
 use Brick\Postcode\Tests\CountryTest;
 
 /**
@@ -18,7 +18,7 @@ class DZTest extends CountryTest
      */
     public function getFormatter() : CountryPostcodeFormatter
     {
-        return new DZ();
+        return new DZFormatter();
     }
 
     /**

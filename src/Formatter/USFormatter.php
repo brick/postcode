@@ -14,7 +14,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * ZIP codes consist of 5 digits without separator.
  * ZIP+4 codes consist of 5 digits, followed by a dash, followed by 4 digits.
  */
-class US implements CountryPostcodeFormatter
+class USFormatter implements CountryPostcodeFormatter
 {
     /**
      * {@inheritdoc}

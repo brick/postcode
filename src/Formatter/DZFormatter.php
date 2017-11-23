@@ -7,13 +7,13 @@ namespace Brick\Postcode\Formatter;
 use Brick\Postcode\CountryPostcodeFormatter;
 
 /**
- * Validates and formats postcodes in Albania.
+ * Validates and formats postcodes in Algeria.
  *
- * Postcodes consist of 4 digits, without separator.
+ * Postcodes consist of 5 digits, without separator.
  *
- * @see https://en.wikipedia.org/wiki/Postal_codes_in_Albania
+ * @see https://en.wikipedia.org/wiki/Postal_codes_in_Algeria
  */
-class AL implements CountryPostcodeFormatter
+class DZFormatter implements CountryPostcodeFormatter
 {
     /**
      * {@inheritdoc}
@@ -24,7 +24,7 @@ class AL implements CountryPostcodeFormatter
             return null;
         }
 
-        if (strlen($postcode) !== 4) {
+        if (strlen($postcode) !== 5) {
             return null;
         }
 

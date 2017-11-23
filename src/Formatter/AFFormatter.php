@@ -17,7 +17,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  *
  * @see https://en.wikipedia.org/wiki/Postal_codes_in_Afghanistan
  */
-class AF implements CountryPostcodeFormatter
+class AFFormatter implements CountryPostcodeFormatter
 {
     /**
      * {@inheritdoc}

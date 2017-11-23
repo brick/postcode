@@ -15,7 +15,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * - Other digits, depending on the district, represent further geographical
  *   division of this district.
  */
-class SK implements CountryPostcodeFormatter
+class SKFormatter implements CountryPostcodeFormatter
 {
     /**
      * {@inheritdoc}
