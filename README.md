@@ -13,10 +13,12 @@ A PHP library to validate and format postcodes.
 
 This library can currently format and validate postcodes for the following countries:
 
+- `CZ` Czechia
 - `FR` France
 - `GB` United Kingdom
 - `PL` Poland
 - `RE` Réunion island
+- `SK` Slovakia
 - `US` United States
 
 Contributions are welcome: feel free to open a pull request to add a formatter for another country.

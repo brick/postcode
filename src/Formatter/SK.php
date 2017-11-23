@@ -1,0 +1,41 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Brick\Postcode\Formatter;
+
+use Brick\Postcode\CountryPostcodeFormatter;
+
+/**
+ * Validates and formats postcodes in Slovakia.
+ *
+ * Postcodes consist of 5 digits in the following format: xxx xx.
+ *
+ * - The first digit represents the postal district and is either 8, 9, or 0.
+ * - Other digits, depending on the district, represent further geographical
+ *   division of this district.
+ */
+class SK implements CountryPostcodeFormatter
+{
+    /**
+     * {@inheritdoc}
+     */
+    public function format(string $postcode) : ?string
+    {
+        if (! ctype_digit($postcode)) {
+            return null;
+        }
+
+        if (strlen($postcode) !== 5) {
+            return null;
+        }
+
+        $district = $postcode[0];
+
+        if (! in_array($district, ['8', '9', '0'], true)) {
+            return null;
+        }
+
+        return substr($postcode, 0, 3) . ' ' . substr($postcode, 3);
+    }
+}
