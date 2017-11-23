@@ -18,7 +18,15 @@ class REFormatter implements CountryPostcodeFormatter
      */
     public function format(string $postcode) : ?string
     {
-        if (! ctype_digit($postcode) || strlen($postcode) !== 5 || substr($postcode, 0, 3) !== '974') {
+        if (! ctype_digit($postcode)) {
+            return null;
+        }
+
+        if (strlen($postcode) !== 5) {
+            return null;
+        }
+
+        if (substr($postcode, 0, 3) !== '974') {
             return null;
         }
 

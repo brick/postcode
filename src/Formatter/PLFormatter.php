@@ -23,7 +23,11 @@ class PLFormatter implements CountryPostcodeFormatter
      */
     public function format(string $postcode) : ?string
     {
-        if (! ctype_digit($postcode) || strlen($postcode) !== 5) {
+        if (! ctype_digit($postcode)) {
+            return null;
+        }
+
+        if (strlen($postcode) !== 5) {
             return null;
         }
 
