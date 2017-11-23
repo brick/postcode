@@ -5,26 +5,26 @@ declare(strict_types=1);
 namespace Brick\Postcode\Tests\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
-use Brick\Postcode\Formatter\ATFormatter;
-use Brick\Postcode\Tests\CountryTest;
+use Brick\Postcode\Formatter\PLFormatter;
+use Brick\Postcode\Tests\CountryPostcodeFormatterTest;
 
 /**
- * Unit tests for the AT postcode formatter.
+ * Unit tests for the PL postcode formatter.
  */
-class ATTest extends CountryTest
+class PLFormatterTest extends CountryPostcodeFormatterTest
 {
     /**
      * {@inheritdoc}
      */
-    public function getFormatter() : CountryPostcodeFormatter
+    protected function getFormatter() : CountryPostcodeFormatter
     {
-        return new ATFormatter();
+        return new PLFormatter();
     }
 
     /**
      * {@inheritdoc}
      */
-    public function providerPostcode() : array
+    public function providerFormat() : array
     {
         return [
             ['', null],
@@ -32,8 +32,7 @@ class ATTest extends CountryTest
             ['1', null],
             ['12', null],
             ['123', null],
-            ['1234', '1234'],
-            ['12345', null],
+            ['12345', '12-345'],
             ['123456', null],
 
             ['A', null],

@@ -5,26 +5,26 @@ declare(strict_types=1);
 namespace Brick\Postcode\Tests\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
-use Brick\Postcode\Formatter\AXFormatter;
-use Brick\Postcode\Tests\CountryTest;
+use Brick\Postcode\Formatter\REFormatter;
+use Brick\Postcode\Tests\CountryPostcodeFormatterTest;
 
 /**
- * Unit tests for the AX postcode formatter.
+ * Unit tests for the FR postcode formatter.
  */
-class AXTest extends CountryTest
+class REFormatterTest extends CountryPostcodeFormatterTest
 {
     /**
      * {@inheritdoc}
      */
-    public function getFormatter() : CountryPostcodeFormatter
+    protected function getFormatter() : CountryPostcodeFormatter
     {
-        return new AXFormatter();
+        return new REFormatter();
     }
 
     /**
      * {@inheritdoc}
      */
-    public function providerPostcode() : array
+    public function providerFormat() : array
     {
         return [
             ['', null],
@@ -36,17 +36,19 @@ class AXTest extends CountryTest
             ['12345', null],
             ['123456', null],
 
-            ['AB22222', null],
-            ['AX22222', 'AX-22222'],
-
-            ['22345', '22345'],
-
             ['A', null],
             ['AB', null],
             ['ABC', null],
             ['ABCD', null],
             ['ABCDE', null],
-            ['ABCDEF', null]
+            ['ABCDEF', null],
+
+            ['97000', null],
+            ['97399', null],
+            ['97400', '97400'],
+            ['97412', '97412'],
+            ['97499', '97499'],
+            ['97500', null],
         ];
     }
 }

@@ -6,17 +6,17 @@ namespace Brick\Postcode\Tests\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
 use Brick\Postcode\Formatter\ARFormatter;
-use Brick\Postcode\Tests\CountryTest;
+use Brick\Postcode\Tests\CountryPostcodeFormatterTest;
 
 /**
  * Unit tests for the AR postcode formatter.
  */
-class ARTest extends CountryTest
+class ARFormatterTest extends CountryPostcodeFormatterTest
 {
     /**
      * {@inheritdoc}
      */
-    public function getFormatter() : CountryPostcodeFormatter
+    protected function getFormatter() : CountryPostcodeFormatter
     {
         return new ARFormatter();
     }
@@ -24,7 +24,7 @@ class ARTest extends CountryTest
     /**
      * {@inheritdoc}
      */
-    public function providerPostcode() : array
+    public function providerFormat() : array
     {
         return [
             ['', null],
