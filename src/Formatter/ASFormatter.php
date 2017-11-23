@@ -21,10 +21,6 @@ class ASFormatter implements CountryPostcodeFormatter
      */
     public function format(string $postcode) : ?string
     {
-        if (! ctype_digit($postcode)) {
-            return null;
-        }
-
         $length = strlen($postcode);
 
         if ($length === 5) {
@@ -36,6 +32,10 @@ class ASFormatter implements CountryPostcodeFormatter
         }
 
         if ($length !== 9) {
+            return null;
+        }
+
+        if (! ctype_digit($postcode)) {
             return null;
         }
 
