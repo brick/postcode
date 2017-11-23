@@ -31,7 +31,7 @@ class ADTest extends CountryTest
 
             ['1', null],
             ['12', null],
-            ['123', null],
+            ['123', 'AD123'],
             ['1234', null],
             ['12345', null],
             ['123456', null],

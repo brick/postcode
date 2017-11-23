@@ -27,8 +27,9 @@ class AITest extends CountryTest
     public function providerPostcode() : array
     {
         return [
-            ['', null],
-            ['2640', null],
+            ['', 'AI-2640'],
+            ['2640', 'AI-2640'],
+            ['2641', null],
             ['AI', null],
             ['AB2650', null],
             ['AI2640', 'AI-2640'],
