@@ -27,7 +27,7 @@ class AIFormatterTest extends CountryPostcodeFormatterTest
     public function providerFormat() : array
     {
         return [
-            ['', 'AI-2640'],
+            ['', null],
             ['2640', 'AI-2640'],
             ['2641', null],
             ['AI', null],
