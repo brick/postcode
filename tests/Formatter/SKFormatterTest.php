@@ -35,6 +35,10 @@ class SKFormatterTest extends CountryPostcodeFormatterTest
             ['0123', null],
             ['01234', '012 34'],
             ['12345', null],
+            ['79999', null],
+            ['80000', '800 00'],
+            ['99999', '999 99'],
+            ['12345', null],
             ['60200', null],
             ['012345', null],
 
