@@ -21,6 +21,9 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * A stands for a capital letter, 9 stands for a digit.
  *
  * The first part is called the outcode, the second part is called the incode.
+ *
+ * @see https://en.wikipedia.org/wiki/List_of_postal_codes
+ * @see https://en.wikipedia.org/wiki/Postcodes_in_the_United_Kingdom
  */
 class GBFormatter implements CountryPostcodeFormatter
 {
