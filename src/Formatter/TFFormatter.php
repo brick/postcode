@@ -9,7 +9,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
 /**
  * Validates and formats postcodes in French Southern and Antarctic Territories.
  *
- * Postcode format is 984NN, where N stands for a digit.
+ * French codes in the 98400 range have been reserved, but do not seem to be in use at the moment.
  *
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  */
