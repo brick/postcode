@@ -32,6 +32,7 @@ class USFormatterTest extends CountryPostcodeFormatterTest
             ['1', null],
             ['12', null],
             ['123', null],
+            ['1234', null],
             ['12345', '12345'],
             ['123456', null],
             ['1234567', null],
