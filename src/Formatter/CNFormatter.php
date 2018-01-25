@@ -12,6 +12,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * China Post uses a six-digit all-numerical system, without separator.
  * The range 000000–009999 is not in use.
  *
+ * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes_in_China
  */
 class CNFormatter implements CountryPostcodeFormatter

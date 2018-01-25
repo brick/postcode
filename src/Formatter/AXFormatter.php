@@ -12,6 +12,8 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * Postcodes consist of 5 digits, starting with 22.
  * Postcodes may optionally start with "AX-" when used from abroad.
  * This formatter only outputs the prefix if present in the input.
+ *
+ * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  */
 class AXFormatter implements CountryPostcodeFormatter
 {

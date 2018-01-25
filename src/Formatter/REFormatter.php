@@ -10,6 +10,8 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * Validates and formats postcodes in the island of Réunion.
  *
  * Postcodes consist of 5 digits, starting with 974, without separator.
+ *
+ * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  */
 class REFormatter implements CountryPostcodeFormatter
 {

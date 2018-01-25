@@ -11,6 +11,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  *
  * Postcodes consist of 4 digits, without separator.
  *
+ * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/Postal_codes_in_Albania
  */
 class ALFormatter implements CountryPostcodeFormatter

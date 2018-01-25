@@ -11,6 +11,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  *
  * Postcode formats are AA NN for street addresses, AA AA for P.O. Box addresses (A=letter, N=digit).
  *
+ * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/Postal_codes_in_Bermuda
  */
 class BMFormatter implements CountryPostcodeFormatter

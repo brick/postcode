@@ -12,6 +12,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * Postal codes in Barbados are 5 digit numeric, with BB prefix.
  * This formatter accepts postcodes with and without the BB prefix, and always outputs the prefix.
  *
+ * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/Postal_codes_in_Barbados
  */
 class BBFormatter implements CountryPostcodeFormatter

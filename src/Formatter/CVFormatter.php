@@ -10,6 +10,8 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * Validates and formats postcodes in Cape Verde.
  *
  * Postcodes consist of 4 digits, without separator.
+ *
+ * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  */
 class CVFormatter implements CountryPostcodeFormatter
 {

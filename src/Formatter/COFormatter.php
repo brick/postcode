@@ -12,6 +12,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * Postal codes in Colombia are 6 digit numeric.
  * The first 2 digits represent the department and can range from 00 to 32.
  *
+ * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/Postal_codes_in_Colombia
  */
 class COFormatter implements CountryPostcodeFormatter

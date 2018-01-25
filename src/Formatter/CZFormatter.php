@@ -16,6 +16,8 @@ use Brick\Postcode\CountryPostcodeFormatter;
  *   district.
  * - The third and, if necessary, other digits are used to distinguish
  *   the post office and eventually post office boxes.
+ *
+ * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  */
 class CZFormatter implements CountryPostcodeFormatter
 {

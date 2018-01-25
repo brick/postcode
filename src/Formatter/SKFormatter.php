@@ -14,6 +14,8 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * - The first digit represents the postal district and is either 8, 9, or 0.
  * - Other digits, depending on the district, represent further geographical
  *   division of this district.
+ *
+ * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  */
 class SKFormatter implements CountryPostcodeFormatter
 {

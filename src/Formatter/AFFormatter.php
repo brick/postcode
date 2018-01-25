@@ -15,6 +15,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * while the last two digits correspond either to the city/delivery zone (range 01–50)
  * or to the district/delivery zone (range 51–99).
  *
+ * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/Postal_codes_in_Afghanistan
  */
 class AFFormatter implements CountryPostcodeFormatter

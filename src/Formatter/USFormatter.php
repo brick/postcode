@@ -13,6 +13,8 @@ use Brick\Postcode\CountryPostcodeFormatter;
  *
  * ZIP codes consist of 5 digits without separator.
  * ZIP+4 codes consist of 5 digits, followed by a dash, followed by 4 digits.
+ *
+ * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  */
 class USFormatter implements CountryPostcodeFormatter
 {

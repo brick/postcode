@@ -11,6 +11,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  *
  * Postcode format is KYN-NNNN, where N are digits. The first digit can only be 1 to 3.
  *
+ * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/Postal_codes_in_the_Cayman_Islands
  */
 class KYFormatter implements CountryPostcodeFormatter

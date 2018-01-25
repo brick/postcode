@@ -13,8 +13,8 @@ use Brick\Postcode\CountryPostcodeFormatter;
  *
  * The first three digits of the postal code are required; the last two digits are optional.
  *
- * @see https://en.wikipedia.org/wiki/List_of_postal_codes_in_Taiwan
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
+ * @see https://en.wikipedia.org/wiki/List_of_postal_codes_in_Taiwan
  */
 class TWFormatter implements CountryPostcodeFormatter
 {

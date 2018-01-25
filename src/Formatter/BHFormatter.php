@@ -11,6 +11,8 @@ use Brick\Postcode\CountryPostcodeFormatter;
  *
  * Valid post code numbers are 101 to 1216 with gaps in the range. Known as block number formally.
  * The first 1 or 2 digits refer to one of the 12 municipalities of the country.
+ *
+ * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  */
 class BHFormatter implements CountryPostcodeFormatter
 {

@@ -15,6 +15,8 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * - The second digit represents the major geographical subdivision of this district
  * - The three digits after the dash represents the post office, or in the case of large cities,
  *   a particular street, part of the street or even separate address.
+ *
+ * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  */
 class PLFormatter implements CountryPostcodeFormatter
 {

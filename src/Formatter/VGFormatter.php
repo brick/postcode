@@ -11,6 +11,8 @@ use Brick\Postcode\CountryPostcodeFormatter;
  *
  * The postcode format is VG followed by 4 digits, specifically VG1110 through VG1160.
  * This formatter accepts inputs with and without the VG prefix, and always outputs the prefix.
+ *
+ * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  */
 class VGFormatter implements CountryPostcodeFormatter
 {

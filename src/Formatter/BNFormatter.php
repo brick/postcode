@@ -11,6 +11,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  *
  * Postcode format is two letters followed by 4 digits, without separator.
  *
+ * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/Postal_codes_in_Brunei
  */
 class BNFormatter implements CountryPostcodeFormatter

@@ -10,6 +10,8 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * Validates and formats postcodes in Cambodia.
  *
  * Postcodes consist of 5 digits, without separator.
+ *
+ * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  */
 class KHFormatter implements CountryPostcodeFormatter
 {
