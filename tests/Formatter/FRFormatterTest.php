@@ -41,7 +41,7 @@ class FRFormatterTest extends CountryPostcodeFormatterTest
             ['ABC', null],
             ['ABCD', null],
             ['ABCDE', null],
-            ['ABCDEF', null]
+            ['ABCDEF', null],
         ];
     }
 }

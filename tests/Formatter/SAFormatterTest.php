@@ -48,7 +48,7 @@ class SAFormatterTest extends CountryPostcodeFormatterTest
             ['ABCDEFG', null],
             ['ABCDEFGH', null],
             ['ABCDEFGHI', null],
-            ['ABCDEFGHIJK', null]
+            ['ABCDEFGHIJK', null],
         ];
     }
 }
