@@ -63,9 +63,21 @@ $formatter->format('US', '337014313'); // 33701-4313
 ## Notes
 
 Postcodes are cleaned from optional separators (spaces and dashes) before validation.
-Misplaced separators are not considered an error and will be ignored.
+Misplaced or mismatched separators are not considered an error and will be ignored:
+
+```php
+$formatter->format('GB', 'WC-2E9RZ'); // WC2E 9RZ
+```
 
 If `format()` is called with an unknown country code, an [UnknownCountryException](https://github.com/brick/postcode/blob/master/src/UnknownCountryException.php) is thrown.
-Note that a country code with no postcode system is considered as unknown, even if the country code is a valid ISO 3166 code.
+Note that a country code with no postcode system is considered as unknown, even if the country code is a valid ISO 3166 code:
+
+```php
+$formatter->format('XX', '12345'); // UnknownCountryException
+```
 
 If `format()` is called with an invalid postcode for the given country, an [InvalidPostcodeException](https://github.com/brick/postcode/blob/master/src/InvalidPostcodeException.php) is thrown.
+
+```php
+$formatter->format('GB', 'ABCDEFG'); // InvalidPostcodeException
+```
