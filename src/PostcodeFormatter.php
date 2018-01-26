@@ -19,20 +19,15 @@ class PostcodeFormatter
     /**
      * @param string $country  The ISO 3166-1 alpha-2 country code.
      * @param string $postcode The postcode to format.
-     * @param bool   $cleanup  Whether to clean up non-alphanumeric characters from the postcode prior to validation.
-     *                         This allows the formatter to accept (potentially improperly) formatted postcodes.
-     *                         By default, the postcode is expected to be unformatted, without any separator.
      *
      * @return string
      *
      * @throws InvalidPostcodeException
      * @throws UnknownCountryException
      */
-    public function formatPostcode(string $country, string $postcode, bool $cleanup = false) : string
+    public function formatPostcode(string $country, string $postcode) : string
     {
-        if ($cleanup) {
-            $postcode = preg_replace('/[^a-zA-Z0-9]/', '', $postcode);
-        }
+        $postcode = str_replace([' ', '-'], '', $postcode);
 
         $formatted = $this->getFormatter($country)->format($postcode);
 
