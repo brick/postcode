@@ -22,11 +22,11 @@ class CLFormatter implements CountryPostcodeFormatter
      */
     public function format(string $postcode) : ?string
     {
-        if (! ctype_digit($postcode)) {
+        if (strlen($postcode) !== 7) {
             return null;
         }
 
-        if (strlen($postcode) !== 7) {
+        if (! ctype_digit($postcode)) {
             return null;
         }
 

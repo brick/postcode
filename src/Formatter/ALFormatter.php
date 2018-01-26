@@ -21,11 +21,11 @@ class ALFormatter implements CountryPostcodeFormatter
      */
     public function format(string $postcode) : ?string
     {
-        if (! ctype_digit($postcode)) {
+        if (strlen($postcode) !== 4) {
             return null;
         }
 
-        if (strlen($postcode) !== 4) {
+        if (! ctype_digit($postcode)) {
             return null;
         }
 
