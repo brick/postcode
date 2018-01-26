@@ -48,6 +48,7 @@ class KYFormatterTest extends CountryPostcodeFormatterTest
             ['KY23456', 'KY2-3456'],
             ['KY34567', 'KY3-4567'],
             ['KY45678', null],
+            ['KYX1234', null],
             ['KX12345', null],
             ['XY12345', null],
             ['KKY1234', null],

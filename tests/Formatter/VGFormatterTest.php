@@ -39,6 +39,7 @@ class VGFormatterTest extends CountryPostcodeFormatterTest
             ['1160', 'VG1160'],
             ['1161', null],
             ['12345', null],
+            ['XXXX', null],
 
             ['A', null],
             ['AB', null],
@@ -46,6 +47,7 @@ class VGFormatterTest extends CountryPostcodeFormatterTest
             ['AVG1110', null],
             ['VG01110', null],
             ['VG11100', null],
+            ['VGXXXX', null],
 
             ['VG', null],
             ['VG1', null],
