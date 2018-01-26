@@ -75,7 +75,7 @@ class PostcodeFormatterTest extends TestCase
     {
         return [
             ['GB', 'WC2E9RZ', 'WC2E 9RZ'],
-            ['GB', 'WC-2E9RZ', 'WC2E 9RZ'],
+            ['GB', 'wc-2E9RZ', 'WC2E 9RZ'],
             ['PL', '12345', '12-345']
         ];
     }

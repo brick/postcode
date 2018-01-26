@@ -27,7 +27,7 @@ class GGFormatter implements CountryPostcodeFormatter
      */
     public function format(string $postcode) : ?string
     {
-        if (preg_match('/^(GY[0-9]{1,2})([0-9][A-Z][A-Z])$/', strtoupper($postcode), $matches) !== 1) {
+        if (preg_match('/^(GY[0-9]{1,2})([0-9][A-Z][A-Z])$/', $postcode, $matches) !== 1) {
             return null;
         }
 

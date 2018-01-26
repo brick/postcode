@@ -35,7 +35,7 @@ class IMFormatter implements CountryPostcodeFormatter
      */
     public function format(string $postcode) : ?string
     {
-        if (preg_match(self::PATTERN, strtoupper($postcode), $matches) !== 1) {
+        if (preg_match(self::PATTERN, $postcode, $matches) !== 1) {
             return null;
         }
 

@@ -10,26 +10,38 @@ namespace Brick\Postcode;
 class PostcodeFormatter
 {
     /**
-     * The postcode formatters, indexed by country code.
+     * The country postcode formatters, indexed by country code.
      *
      * @var CountryPostcodeFormatter[]
      */
     private $formatters = [];
 
     /**
+     * Formats the given postcode.
+     *
+     * The country code and postcode are case insensitive.
+     * The input postcode is allowed to contain space or dash separators, possibly misplaced.
+     *
      * @param string $country  The ISO 3166-1 alpha-2 country code.
      * @param string $postcode The postcode to format.
      *
      * @return string
      *
-     * @throws InvalidPostcodeException
      * @throws UnknownCountryException
+     * @throws InvalidPostcodeException
      */
     public function formatPostcode(string $country, string $postcode) : string
     {
         $postcode = str_replace([' ', '-'], '', $postcode);
+        $postcode = strtoupper($postcode);
 
-        $formatted = $this->getFormatter($country)->format($postcode);
+        $formatter = $this->getFormatter($country);
+
+        if (preg_match('/^[A-Z0-9]+$/', $postcode) !== 1) {
+            throw new InvalidPostcodeException('Invalid postcode: ' . $postcode);
+        }
+
+        $formatted = $formatter->format($postcode);
 
         if ($formatted === null) {
             throw new InvalidPostcodeException('Invalid postcode: ' . $postcode);

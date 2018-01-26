@@ -14,7 +14,9 @@ interface CountryPostcodeFormatter
     /**
      * Validates and formats the given postcode.
      *
-     * @param string $postcode The postcode to format, as a string of alphanumeric characters with no separator.
+     * The postcode must be a non-empty string of uppercase alphanumeric characters, with no separator.
+     *
+     * @param string $postcode The postcode to format.
      *
      * @return string|null The formatted postcode, or NULL if the postcode is invalid.
      */
