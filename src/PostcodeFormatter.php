@@ -30,7 +30,7 @@ class PostcodeFormatter
      * @throws UnknownCountryException
      * @throws InvalidPostcodeException
      */
-    public function formatPostcode(string $country, string $postcode) : string
+    public function format(string $country, string $postcode) : string
     {
         $postcode = str_replace([' ', '-'], '', $postcode);
         $postcode = strtoupper($postcode);

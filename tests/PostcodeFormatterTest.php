@@ -21,7 +21,7 @@ class PostcodeFormatterTest extends TestCase
     public function testFormatUnknownCountry() : void
     {
         $formatter = new PostcodeFormatter();
-        $formatter->formatPostcode('XX', '');
+        $formatter->format('XX', '');
     }
 
     /**
@@ -36,7 +36,7 @@ class PostcodeFormatterTest extends TestCase
     public function testFormatInvalidPostcode(string $country, string $postcode) : void
     {
         $formatter = new PostcodeFormatter();
-        $formatter->formatPostcode($country, $postcode);
+        $formatter->format($country, $postcode);
     }
 
     /**
@@ -65,7 +65,7 @@ class PostcodeFormatterTest extends TestCase
     {
         $formatter = new PostcodeFormatter();
 
-        $this->assertSame($expectedOutput, $formatter->formatPostcode($country, $postcode, true));
+        $this->assertSame($expectedOutput, $formatter->format($country, $postcode, true));
     }
 
     /**
