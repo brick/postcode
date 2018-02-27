@@ -16,7 +16,11 @@
   },
   "autoload": {
     "psr-4": {
-      "Brick\\Postcode\\": "src/",
+      "Brick\\Postcode\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
       "Brick\\Postcode\\Tests\\": "tests/"
     }
   }
