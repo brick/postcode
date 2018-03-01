@@ -59,18 +59,22 @@ class PostcodeFormatter
      */
     private function getFormatter(string $country) : CountryPostcodeFormatter
     {
-        $country = strtoupper($country);
-
-        if (! isset($this->formatters[$country])) {
-            $class = __NAMESPACE__ . '\\Formatter\\' . $country . 'Formatter';
-
-            if (! class_exists($class)) {
-                throw new UnknownCountryException('Unknown country: ' . $country);
-            }
-
-            $this->formatters[$country] = new $class();
+        if (isset($this->formatters[$country])) {
+            return $this->formatters[$country];
         }
 
-        return $this->formatters[$country];
+        if (preg_match('/^[a-zA-Z]{2}$/', $country) !== 1) {
+            throw new UnknownCountryException('Unknown country: ' . $country);
+        }
+
+        $country = strtoupper($country);
+
+        $class = __NAMESPACE__ . '\\Formatter\\' . $country . 'Formatter';
+
+        if (! class_exists($class)) {
+            throw new UnknownCountryException('Unknown country: ' . $country);
+        }
+
+        return $this->formatters[$country] = new $class();
     }
 }
