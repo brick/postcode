@@ -17,20 +17,10 @@ Contributions are welcome, please feel free to open an issue or a pull request i
 
 ## Installation
 
-This library is installable via [Composer](https://getcomposer.org/). Just run:
+This library is installable via [Composer](https://getcomposer.org/):
 
 ```bash
 composer require brick/postcode
-```
-
-or manually define the following requirement in your `composer.json` file:
-
-```json
-{
-    "require": {
-        "brick/postcode": "0.2.*"
-    }
-}
 ```
 
 ## Requirements
