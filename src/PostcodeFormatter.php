@@ -52,6 +52,15 @@ class PostcodeFormatter
 
     /**
      * @param string $country
+     * @return bool
+     */
+    public function isSupportedCountry(string $country): bool
+    {
+        return class_exists($this->getFormatterClass($country));
+    }
+
+    /**
+     * @param string $country
      *
      * @return CountryPostcodeFormatter
      *
@@ -67,14 +76,22 @@ class PostcodeFormatter
             throw new UnknownCountryException('Unknown country: ' . $country);
         }
 
-        $country = strtoupper($country);
-
-        $class = __NAMESPACE__ . '\\Formatter\\' . $country . 'Formatter';
+        $class = $this->getFormatterClass($country);
 
         if (! class_exists($class)) {
             throw new UnknownCountryException('Unknown country: ' . $country);
         }
 
         return $this->formatters[$country] = new $class();
+    }
+
+    /**
+     * @param string $country
+     *
+     * @return string
+     */
+    private function getFormatterClass(string $country) : string
+    {
+        return __NAMESPACE__ . '\\Formatter\\' . strtoupper($country) . 'Formatter';
     }
 }

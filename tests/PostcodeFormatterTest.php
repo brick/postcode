@@ -40,6 +40,24 @@ class PostcodeFormatterTest extends TestCase
     }
 
     /**
+     * @return void
+     */
+    public function testFormatterIsNotSupportedCountry() : void
+    {
+        $formatter = new PostcodeFormatter();
+        $this->assertFalse($formatter->isSupportedCountry('UnknownCountry'));
+    }
+
+    /**
+     * @return void
+     */
+    public function testFormatterIsSupportedCountry() : void
+    {
+        $formatter = new PostcodeFormatter();
+        $this->assertTrue($formatter->isSupportedCountry('FR'));
+    }
+
+    /**
      * @return array
      */
     public function providerFormatInvalidPostcode() : array
