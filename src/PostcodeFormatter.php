@@ -37,6 +37,10 @@ class PostcodeFormatter
 
         $formatter = $this->getFormatter($country);
 
+        if ($formatter === null) {
+            throw new UnknownCountryException('Unknown country: ' . $country);
+        }
+
         if (preg_match('/^[A-Z0-9]+$/', $postcode) !== 1) {
             throw new InvalidPostcodeException('Invalid postcode: ' . $postcode);
         }
@@ -57,42 +61,32 @@ class PostcodeFormatter
      */
     public function isSupportedCountry(string $country) : bool
     {
-        return class_exists($this->getFormatterClass($country));
+        return $this->getFormatter($country) !== null;
     }
 
     /**
-     * @param string $country
+     * @param string $country The ISO 3166-1 alpha-2 country code.
      *
-     * @return CountryPostcodeFormatter
-     *
-     * @throws UnknownCountryException
+     * @return CountryPostcodeFormatter|null The formatter, or null if the country code is unknown.
      */
-    private function getFormatter(string $country) : CountryPostcodeFormatter
+    private function getFormatter(string $country) : ?CountryPostcodeFormatter
     {
         if (isset($this->formatters[$country])) {
             return $this->formatters[$country];
         }
 
-        if (preg_match('/^[a-zA-Z]{2}$/', $country) !== 1) {
-            throw new UnknownCountryException('Unknown country: ' . $country);
+        $country = strtoupper($country);
+
+        if (preg_match('/^[A-Z]{2}$/', $country) !== 1) {
+            return null;
         }
 
-        $class = $this->getFormatterClass($country);
+        $class = __NAMESPACE__ . '\\Formatter\\' . $country . 'Formatter';
 
         if (! class_exists($class)) {
-            throw new UnknownCountryException('Unknown country: ' . $country);
+            return null;
         }
 
         return $this->formatters[$country] = new $class();
-    }
-
-    /**
-     * @param string $country
-     *
-     * @return string
-     */
-    private function getFormatterClass(string $country) : string
-    {
-        return __NAMESPACE__ . '\\Formatter\\' . strtoupper($country) . 'Formatter';
     }
 }

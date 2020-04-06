@@ -75,7 +75,7 @@ class PostcodeFormatterTest extends TestCase
     {
         return [
             ['GB', 'WC2E9RZ', 'WC2E 9RZ'],
-            ['GB', 'wc-2E9RZ', 'WC2E 9RZ'],
+            ['gb', 'wc-2E9RZ', 'WC2E 9RZ'],
             ['PL', '12345', '12-345']
         ];
     }
@@ -100,9 +100,10 @@ class PostcodeFormatterTest extends TestCase
     public function providerIsSupportedCountry() : array
     {
         return [
-            ['FR', true],
+            ['fr', true],
             ['GB', true],
             ['XX', false],
+            ['UnknownCountry', false],
         ];
     }
 }
