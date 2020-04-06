@@ -40,24 +40,6 @@ class PostcodeFormatterTest extends TestCase
     }
 
     /**
-     * @return void
-     */
-    public function testFormatterIsNotSupportedCountry() : void
-    {
-        $formatter = new PostcodeFormatter();
-        $this->assertFalse($formatter->isSupportedCountry('UnknownCountry'));
-    }
-
-    /**
-     * @return void
-     */
-    public function testFormatterIsSupportedCountry() : void
-    {
-        $formatter = new PostcodeFormatter();
-        $this->assertTrue($formatter->isSupportedCountry('FR'));
-    }
-
-    /**
      * @return array
      */
     public function providerFormatInvalidPostcode() : array
@@ -95,6 +77,32 @@ class PostcodeFormatterTest extends TestCase
             ['GB', 'WC2E9RZ', 'WC2E 9RZ'],
             ['GB', 'wc-2E9RZ', 'WC2E 9RZ'],
             ['PL', '12345', '12-345']
+        ];
+    }
+
+    /**
+     * @dataProvider providerIsSupportedCountry
+     *
+     * @param string $country
+     * @param bool   $isSupported
+     *
+     * @return void
+     */
+    public function testIsSupportedCountry(string $country, bool $isSupported) : void
+    {
+        $formatter = new PostcodeFormatter();
+        $this->assertSame($isSupported, $formatter->isSupportedCountry($country));
+    }
+
+    /**
+     * @return array
+     */
+    public function providerIsSupportedCountry() : array
+    {
+        return [
+            ['FR', true],
+            ['GB', true],
+            ['XX', false],
         ];
     }
 }
