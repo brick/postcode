@@ -52,9 +52,10 @@ class PostcodeFormatter
 
     /**
      * @param string $country
+     *
      * @return bool
      */
-    public function isSupportedCountry(string $country): bool
+    public function isSupportedCountry(string $country) : bool
     {
         return class_exists($this->getFormatterClass($country));
     }
