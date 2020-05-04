@@ -20,7 +20,7 @@ class PostcodeFormatter
      * Formats the given postcode.
      *
      * The country code and postcode are case insensitive.
-     * The input postcode is allowed to contain space or dash separators, possibly misplaced.
+     * The input postcode is allowed to contain non-alphanumeric separators, possibly misplaced.
      *
      * @param string $country  The ISO 3166-1 alpha-2 country code.
      * @param string $postcode The postcode to format.
@@ -32,17 +32,13 @@ class PostcodeFormatter
      */
     public function format(string $country, string $postcode) : string
     {
-        $postcode = str_replace([' ', '-'], '', $postcode);
         $postcode = strtoupper($postcode);
+        $postcode = preg_replace('/[^A-Z0-9]/', '', $postcode);
 
         $formatter = $this->getFormatter($country);
 
         if ($formatter === null) {
             throw new UnknownCountryException('Unknown country: ' . $country);
-        }
-
-        if (preg_match('/^[A-Z0-9]+$/', $postcode) !== 1) {
-            throw new InvalidPostcodeException('Invalid postcode: ' . $postcode);
         }
 
         $formatted = $formatter->format($postcode);
