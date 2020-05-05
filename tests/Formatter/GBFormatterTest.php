@@ -296,6 +296,49 @@ class GBFormatterTest extends CountryPostcodeFormatterTest
             ['ABCDEF1', null],
             ['ABCDEFG', null],
 
+            ['WC2E9RZ', 'WC2E 9RZ'],
+            ['W1A9RZ', 'W1A 9RZ'],
+
+            // QVX cannot appear in the 1st position of the outward code
+            ['QC2E9RZ', null],
+            ['VC2E9RZ', null],
+            ['XC2E9RZ', null],
+
+            // IJZ cannot appear in the 2nd position of the outward code
+            ['WI2E9RZ', null],
+            ['WJ2E9RZ', null],
+            ['WZ2E9RZ', null],
+
+            // only ABCDEFGHJKPSTUW can appear in the 3rd position of the outward code
+            ['W1I9RZ', null],
+            ['W1L9RZ', null],
+            ['W1M9RZ', null],
+            ['W1N9RZ', null],
+            ['W1O9RZ', null],
+            ['W1Q9RZ', null],
+            ['W1R9RZ', null],
+            ['W1V9RZ', null],
+            ['W1X9RZ', null],
+            ['W1Y9RZ', null],
+            ['W1Z9RZ', null],
+
+            // only ABEHMNPRVWXY can appear in the 4th position of the outward code
+            ['WC2C9RZ', null],
+            ['WC2D9RZ', null],
+            ['WC2F9RZ', null],
+            ['WC2G9RZ', null],
+            ['WC2I9RZ', null],
+            ['WC2J9RZ', null],
+            ['WC2K9RZ', null],
+            ['WC2L9RZ', null],
+            ['WC2O9RZ', null],
+            ['WC2Q9RZ', null],
+            ['WC2S9RZ', null],
+            ['WC2T9RZ', null],
+            ['WC2U9RZ', null],
+            ['WC2Z9RZ', null],
+
+            // Special case
             ['GIR0AA', 'GIR 0AA'],
             ['GIR0AB', null],
 
