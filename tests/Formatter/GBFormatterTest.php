@@ -296,6 +296,9 @@ class GBFormatterTest extends CountryPostcodeFormatterTest
             ['ABCDEF1', null],
             ['ABCDEFG', null],
 
+            ['GIR0AA', 'GIR 0AA'],
+            ['GIR0AB', null],
+
             ['9AB123CD', null],
             ['XAB1C2DE', null],
             ['AB123CD4', null],

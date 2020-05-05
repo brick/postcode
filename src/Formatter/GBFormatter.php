@@ -38,6 +38,11 @@ class GBFormatter implements CountryPostcodeFormatter
      */
     public function format(string $postcode) : ?string
     {
+        // special case
+        if ($postcode === 'GIR0AA') {
+            return 'GIR 0AA';
+        }
+
         // regular patterns
         $patterns = $this->getPatterns();
 
