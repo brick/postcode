@@ -59,9 +59,7 @@ class GBFormatter implements CountryPostcodeFormatter
         }
 
         // regular patterns
-        $patterns = $this->getPatterns();
-
-        foreach ($patterns as $pattern) {
+        foreach ($this->getPatterns() as $pattern) {
             if (preg_match($pattern, $postcode, $matches) === 1) {
                 [, $outwardCode, $areaCode, $inwardCode] = $matches;
 
@@ -81,9 +79,9 @@ class GBFormatter implements CountryPostcodeFormatter
      *
      * Each pattern contains 3 capturing groups:
      *
-     * - The outward code (e.g. WC2E)
+     * - The outward code (e.g. WC2E) for formatting
      * - The area code (ex: WC) for additional checks
-     * - The inward code (e.g. 9RZ)
+     * - The inward code (e.g. 9RZ) for formatting
      *
      * @return string[]
      */
