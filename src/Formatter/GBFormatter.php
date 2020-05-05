@@ -94,35 +94,35 @@ class GBFormatter implements CountryPostcodeFormatter
         $n = '[0-9]';
 
         // outward code alpha chars
-        $outAlpha1 = '[ABCDEFGHIJKLMNOPRSTUWYZ]';
-        $outAlpha2 = '[ABCDEFGHKLMNOPQRSTUVWXY]';
-        $outAlpha3 = '[ABCDEFGHJKPSTUW]';
-        $outAlpha4 = '[ABEHMNPRVWXY]';
+        $alphaOut1 = '[ABCDEFGHIJKLMNOPRSTUWYZ]';
+        $alphaOut2 = '[ABCDEFGHKLMNOPQRSTUVWXY]';
+        $alphaOut3 = '[ABCDEFGHJKPSTUW]';
+        $alphaOut4 = '[ABEHMNPRVWXY]';
 
         // inward code alpha chars
-        $inAlpha = '[ABDEFGHJLNPQRSTUWXYZ]';
+        $alphaIn = '[ABDEFGHJLNPQRSTUWXYZ]';
 
         $outPatterns = [];
 
         // AN
-        $outPatterns[] = '(' . $outAlpha1 . ')' . $n;
+        $outPatterns[] = '(' . $alphaOut1 . ')' . $n;
 
         // ANA
-        $outPatterns[] = '(' . $outAlpha1 . ')' . $n . $outAlpha3;
+        $outPatterns[] = '(' . $alphaOut1 . ')' . $n . $alphaOut3;
 
         // ANN
-        $outPatterns[] = '(' . $outAlpha1 . ')' . $n . $n;
+        $outPatterns[] = '(' . $alphaOut1 . ')' . $n . $n;
 
         // AAN
-        $outPatterns[] = '(' . $outAlpha1 . $outAlpha2 . ')' . $n;
+        $outPatterns[] = '(' . $alphaOut1 . $alphaOut2 . ')' . $n;
 
         // AANA
-        $outPatterns[] = '(' . $outAlpha1 . $outAlpha2 . ')' . $n . $outAlpha4;
+        $outPatterns[] = '(' . $alphaOut1 . $alphaOut2 . ')' . $n . $alphaOut4;
 
         // AANN
-        $outPatterns[] = '(' . $outAlpha1 . $outAlpha2 . ')' . $n . $n;
+        $outPatterns[] = '(' . $alphaOut1 . $alphaOut2 . ')' . $n . $n;
 
-        $inPattern = $n . $inAlpha . $inAlpha;
+        $inPattern = $n . $alphaIn . $alphaIn;
 
         $patterns = [];
 
