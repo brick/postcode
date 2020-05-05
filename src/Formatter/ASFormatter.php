@@ -32,11 +32,7 @@ class ASFormatter implements CountryPostcodeFormatter
             return $postcode;
         }
 
-        if ($length !== 9) {
-            return null;
-        }
-
-        if (! ctype_digit($postcode)) {
+        if (preg_match('/^[0-9]{9}$/', $postcode) !== 1) {
             return null;
         }
 

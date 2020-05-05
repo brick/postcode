@@ -26,11 +26,7 @@ class BBFormatter implements CountryPostcodeFormatter
             $postcode = substr($postcode, 2);
         }
 
-        if (strlen($postcode) !== 5) {
-            return null;
-        }
-
-        if (! ctype_digit($postcode)) {
+        if (preg_match('/^[0-9]{5}$/', $postcode) !== 1) {
             return null;
         }
 

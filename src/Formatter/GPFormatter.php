@@ -20,15 +20,7 @@ class GPFormatter implements CountryPostcodeFormatter
      */
     public function format(string $postcode) : ?string
     {
-        if (strlen($postcode) !== 5) {
-            return null;
-        }
-
-        if (! ctype_digit($postcode)) {
-            return null;
-        }
-
-        if (substr($postcode, 0, 3) !== '971') {
+        if (preg_match('/^971[0-9]{2}$/', $postcode) !== 1) {
             return null;
         }
 

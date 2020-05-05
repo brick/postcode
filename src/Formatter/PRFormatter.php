@@ -21,7 +21,7 @@ class PRFormatter implements CountryPostcodeFormatter
      */
     public function format(string $postcode) : ?string
     {
-        if (! ctype_digit($postcode)) {
+        if (preg_match('/^[0-9]+$/', $postcode) !== 1) {
             return null;
         }
 

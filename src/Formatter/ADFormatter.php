@@ -26,11 +26,7 @@ class ADFormatter implements CountryPostcodeFormatter
             $postcode = substr($postcode, 2);
         }
 
-        if (strlen($postcode) !== 3) {
-            return null;
-        }
-
-        if (! ctype_digit($postcode)) {
+        if (preg_match('/^[0-9]{3}$/', $postcode) !== 1) {
             return null;
         }
 
