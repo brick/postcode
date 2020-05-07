@@ -39,6 +39,9 @@ class GBFormatter implements CountryPostcodeFormatter
         'OX', 'PA', 'PE', 'PH', 'PL', 'PO', 'PR', 'RG', 'RH', 'RM', 'S', 'SA', 'SE', 'SG', 'SK', 'SL', 'SM', 'SN', 'SO',
         'SP', 'SR', 'SS', 'ST', 'SW', 'SY', 'TA', 'TD', 'TF', 'TN', 'TQ', 'TR', 'TS', 'TW', 'UB', 'W', 'WA', 'WC', 'WD',
         'WF', 'WN', 'WR', 'WS', 'WV', 'YO', 'ZE',
+
+        // non-geographic
+        'BF', 'BX', 'XX'
     ];
 
     /**
