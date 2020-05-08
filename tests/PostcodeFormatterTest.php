@@ -48,6 +48,7 @@ class PostcodeFormatterTest extends TestCase
             ['FR', ''],
             ['FR', '123456'],
             ['GB', 'ABCDEFG'],
+            ['PL', '12*345'],
         ];
     }
 
@@ -75,7 +76,7 @@ class PostcodeFormatterTest extends TestCase
         return [
             ['GB', 'WC2E9RZ', 'WC2E 9RZ'],
             ['gb', 'wc-2E9RZ', 'WC2E 9RZ'],
-            ['PL', '123*45', '12-345']
+            ['PL', '12345', '12-345']
         ];
     }
 
