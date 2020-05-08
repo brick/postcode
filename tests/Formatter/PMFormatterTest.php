@@ -36,8 +36,7 @@ class PMFormatterTest extends CountryPostcodeFormatterTest
             ['12345', null],
             ['97499', null],
             ['97500', '97500'],
-            ['97501', '97501'],
-            ['97600', null],
+            ['97501', null],
             ['123456', null],
 
             ['A', null],
