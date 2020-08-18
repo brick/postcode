@@ -30,6 +30,6 @@ class SEFormatter implements CountryPostcodeFormatter
             return null;
         }
 
-        return $postcode;
+        return substr_replace($postcode, ' ', 3, 0);
     }
 }
