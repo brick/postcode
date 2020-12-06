@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace Brick\Postcode\Tests;
 
+use Brick\Postcode\InvalidPostcodeException;
 use Brick\Postcode\PostcodeFormatter;
 
+use Brick\Postcode\UnknownCountryException;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -13,20 +15,16 @@ use PHPUnit\Framework\TestCase;
  */
 class PostcodeFormatterTest extends TestCase
 {
-    /**
-     * @expectedException \Brick\Postcode\UnknownCountryException
-     *
-     * @return void
-     */
     public function testFormatUnknownCountry() : void
     {
         $formatter = new PostcodeFormatter();
+
+        $this->expectException(UnknownCountryException::class);
         $formatter->format('XX', '');
     }
 
     /**
      * @dataProvider providerFormatInvalidPostcode
-     * @expectedException \Brick\Postcode\InvalidPostcodeException
      *
      * @param string $country
      * @param string $postcode
@@ -36,6 +34,8 @@ class PostcodeFormatterTest extends TestCase
     public function testFormatInvalidPostcode(string $country, string $postcode) : void
     {
         $formatter = new PostcodeFormatter();
+
+        $this->expectException(InvalidPostcodeException::class);
         $formatter->format($country, $postcode);
     }
 
