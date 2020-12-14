@@ -4,7 +4,7 @@
 
 A PHP library to validate and format postcodes.
 
-[![Build Status](https://secure.travis-ci.org/brick/postcode.svg?branch=master)](http://travis-ci.org/brick/postcode)
+[![Build Status](https://github.com/brick/postcode/workflows/CI/badge.svg)](https://github.com/brick/postcode/actions)
 [![Coverage Status](https://coveralls.io/repos/github/brick/postcode/badge.svg?branch=master)](https://coveralls.io/github/brick/postcode?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/brick/postcode/v/stable)](https://packagist.org/packages/brick/postcode)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](http://opensource.org/licenses/MIT)
