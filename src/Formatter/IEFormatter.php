@@ -13,6 +13,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  *
  * - ANN ANAN
  * - ANN AANN
+ * - ANN ANNN
  * - ANN ANAA
  * - ANW ANAN
  * - ANW AANN
@@ -22,6 +23,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  *
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/Postal_addresses_in_the_Republic_of_Ireland
+ * @see https://www.eircode.ie/
  */
 class IEFormatter implements CountryPostcodeFormatter
 {
@@ -31,6 +33,7 @@ class IEFormatter implements CountryPostcodeFormatter
     private const PATTERN = '/^'
     . '([A-Z][0-9][0-9W])'
     . '('
+    . '(?:[A-Z][0-9][0-9][0-9])|'
     . '(?:[A-Z][0-9][A-Z][0-9])|'
     . '(?:[A-Z][A-Z][0-9][0-9])|'
     . '(?:[A-Z][0-9][A-Z][A-Z])'
