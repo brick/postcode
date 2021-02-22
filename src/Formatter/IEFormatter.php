@@ -9,17 +9,21 @@ use Brick\Postcode\CountryPostcodeFormatter;
 /**
  * Validates and formats the postcodes in the Republic of Ireland.
  *
- * Postcodes can have six different formats:
+ * Postcodes can have eight different formats:
  *
  * - ANN ANAN
  * - ANN AANN
  * - ANN ANNN
  * - ANN ANAA
+ *
  * - ANW ANAN
  * - ANW AANN
  * - ANW ANAA
+ * - ANW ANNN (?) @todo ANNN is valid with ANN prefix, but not sure about ANW.
  *
  * A stands for a capital letter, N stands for a digit, W is the letter W.
+ *
+ * @todo not all alphabet letters are allowed.
  *
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/Postal_addresses_in_the_Republic_of_Ireland
