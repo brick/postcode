@@ -53,6 +53,8 @@ class IEFormatterTest extends CountryPostcodeFormatterTest
             ['A1WB3CD', 'A1W B3CD'],
             ['A1WBC34', 'A1W BC34'],
 
+            ['A98F625', 'A98 F625'],
+
             ['A1XB3C4', null],
             ['A1XB3CD', null],
             ['A1XBC34', null],
