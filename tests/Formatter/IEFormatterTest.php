@@ -45,14 +45,16 @@ class IEFormatterTest extends CountryPostcodeFormatterTest
             ['ABCDEF', null],
             ['ABCDEFGH', null],
 
-            ['A12B3C4', 'A12 B3C4'],
-            ['A12B3CD', 'A12 B3CD'],
-            ['A12BC34', 'A12 BC34'],
+            ['A98C7D6', 'A98 C7D6'],
+            ['A98C7DE', 'A98 C7DE'],
+            ['A98CD76', 'A98 CD76'],
             ['A98F625', 'A98 F625'],
+            ['T12X23H', 'T12 X23H'],
+            ['V94312N', 'V94 312N'],
 
-            ['A1WB3C4', 'A1W B3C4'],
-            ['A1WB3CD', 'A1W B3CD'],
-            ['A1WBC34', 'A1W BC34'],
+            ['D6WA1C2', 'D6W A1C2'],
+            ['D6WA1CD', 'D6W A1CD'],
+            ['D6WV593', 'D6W V593'],
 
             ['A1XB3C4', null],
             ['A1XB3CD', null],
