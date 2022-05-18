@@ -103,7 +103,7 @@ class GBFormatter implements CountryPostcodeFormatter
         $alphaOut4 = '[ABEHMNPRVWXY]';
 
         // inward code alpha chars
-        $alphaIn = '[ABDEFGHJLNPQRSTUWXYZ]';
+        $alphaIn = '[ABCDEFGHJLNPQRSTUWXYZ]';
 
         $outPatterns = [];
 
