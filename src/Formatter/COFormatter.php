@@ -10,7 +10,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * Validates and formats postcodes in Colombia.
  *
  * Postal codes in Colombia are 6 digit numeric.
- * The first 2 digits represent the department.
+ * The first 2 digits represent the department and can range from 00 to 32.
  *
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://es.wikipedia.org/wiki/Anexo:C%C3%B3digos_postales_de_Colombia
@@ -32,7 +32,7 @@ class COFormatter implements CountryPostcodeFormatter
     /**
      * {@inheritdoc}
      */
-    public function format(string $postcode): ?string
+    public function format(string $postcode) : ?string
     {
         if (preg_match('/^\d{2}(?!0000)\d{4}$/', $postcode) !== 1) {
             return null;
