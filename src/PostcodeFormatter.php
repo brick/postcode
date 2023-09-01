@@ -14,7 +14,7 @@ class PostcodeFormatter
      *
      * @var CountryPostcodeFormatter[]
      */
-    private $formatters = [];
+    private array $formatters = [];
 
     /**
      * Formats the given postcode.
