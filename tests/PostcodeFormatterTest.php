@@ -65,7 +65,7 @@ class PostcodeFormatterTest extends TestCase
     {
         $formatter = new PostcodeFormatter();
 
-        $this->assertSame($expectedOutput, $formatter->format($country, $postcode, true));
+        $this->assertSame($expectedOutput, $formatter->format($country, $postcode));
     }
 
     /**
