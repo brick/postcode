@@ -12,7 +12,7 @@ class PostcodeFormatter
     /**
      * The country postcode formatters, indexed by country code.
      *
-     * @var CountryPostcodeFormatter[]
+     * @var (CountryPostcodeFormatter|null)[]
      */
     private array $formatters = [];
 
@@ -71,10 +71,15 @@ class PostcodeFormatter
      */
     private function getFormatter(string $country) : ?CountryPostcodeFormatter
     {
-        if (isset($this->formatters[$country])) {
+        if (array_key_exists($country, $this->formatters)) {
             return $this->formatters[$country];
         }
 
+        return $this->formatters[$country] = $this->doGetFormatter($country);
+    }
+
+    private function doGetFormatter(string $country): ?CountryPostcodeFormatter
+    {
         $country = strtoupper($country);
 
         if (preg_match('/^[A-Z]{2}$/', $country) !== 1) {
@@ -83,10 +88,6 @@ class PostcodeFormatter
 
         $class = __NAMESPACE__ . '\\Formatter\\' . $country . 'Formatter';
 
-        if (! class_exists($class)) {
-            return null;
-        }
-
-        return $this->formatters[$country] = new $class();
+        return class_exists($class) ? new $class() : null;
     }
 }
