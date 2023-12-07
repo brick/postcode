@@ -17,7 +17,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 class COFormatter implements CountryPostcodeFormatter
 {
-    protected $departments = [
+    private const DEPARTMENTS = [
         '05', '08', '11', '13',
         '15', '17', '18', '19',
         '20', '23', '25', '27',
@@ -41,7 +41,7 @@ class COFormatter implements CountryPostcodeFormatter
 
         $department = substr($postcode, 0, 2);
 
-        if (!in_array($department, $this->departments, true)) {
+        if (!in_array($department, self::DEPARTMENTS, true)) {
             return null;
         }
 
