@@ -17,6 +17,11 @@ jobs:
           - "8.1"
           - "8.2"
           - "8.3"
+        deps:
+          - "highest"
+        include:
+          - php-version: "7.4"
+            deps: "lowest"
 
     steps:
       - name: Checkout
@@ -30,6 +35,8 @@ jobs:
 
       - name: Install composer dependencies
         uses: "ramsey/composer-install@v1"
+        with:
+          dependency-versions: ${{ matrix.deps }}
 
       - name: Run PHPUnit
         run: vendor/bin/phpunit
