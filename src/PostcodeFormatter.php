@@ -86,6 +86,7 @@ class PostcodeFormatter
             return null;
         }
 
+        /** @var class-string<CountryPostcodeFormatter> $class */
         $class = __NAMESPACE__ . '\\Formatter\\' . $country . 'Formatter';
 
         return class_exists($class) ? new $class() : null;

@@ -47,6 +47,8 @@ class GBFormatter implements CountryPostcodeFormatter
     /**
      * The regular expression patterns, or null if not built yet.
      *
+     * @psalm-var non-empty-string[]|null
+     *
      * @var string[]|null
      */
     private $patterns = null;
@@ -85,6 +87,8 @@ class GBFormatter implements CountryPostcodeFormatter
      * - The outward code (e.g. WC2E) for formatting
      * - The area code (ex: WC) for additional checks
      * - The inward code (e.g. 9RZ) for formatting
+     *
+     * @psalm-return non-empty-string[]
      *
      * @return string[]
      */
