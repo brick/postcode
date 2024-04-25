@@ -38,7 +38,7 @@ jobs:
           coverage: pcov
 
       - name: Install composer dependencies
-        uses: "ramsey/composer-install@v1"
+        uses: ramsey/composer-install@v3
         with:
           dependency-versions: ${{ matrix.deps }}
 
@@ -72,7 +72,7 @@ jobs:
           php-version: ${{ env.PSALM_PHP_VERSION }}
 
       - name: Install composer dependencies
-        uses: "ramsey/composer-install@v1"
+        uses: ramsey/composer-install@v3
 
       - name: Run Psalm
         run: vendor/bin/psalm --no-progress
