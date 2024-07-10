@@ -15,6 +15,9 @@ use PHPUnit\Framework\TestCase;
  */
 class PostcodeFormatterTest extends TestCase
 {
+    /**
+     * @throws InvalidPostcodeException
+     */
     public function testFormatUnknownCountry() : void
     {
         $formatter = new PostcodeFormatter();
@@ -30,6 +33,7 @@ class PostcodeFormatterTest extends TestCase
      * @param string $postcode
      *
      * @return void
+     * @throws UnknownCountryException
      */
     public function testFormatInvalidPostcode(string $country, string $postcode) : void
     {
@@ -49,6 +53,9 @@ class PostcodeFormatterTest extends TestCase
             ['FR', '123456'],
             ['GB', 'ABCDEFG'],
             ['PL', '12*345'],
+            ['AT', 'T-8084'],
+            ['BE', 'E-1245'],
+            ['LU', 'X2556'],
         ];
     }
 
@@ -60,6 +67,8 @@ class PostcodeFormatterTest extends TestCase
      * @param string $expectedOutput
      *
      * @return void
+     * @throws InvalidPostcodeException
+     * @throws UnknownCountryException
      */
     public function testFormat(string $country, string $postcode, string $expectedOutput) : void
     {
@@ -76,7 +85,10 @@ class PostcodeFormatterTest extends TestCase
         return [
             ['GB', 'WC2E9RZ', 'WC2E 9RZ'],
             ['gb', 'wc-2E9RZ', 'WC2E 9RZ'],
-            ['PL', '12345', '12-345']
+            ['PL', '12345', '12-345'],
+            ['AT', 'A-8084', '8084'],
+            ['BE', 'B-1245', '1245'],
+            ['LU', 'L2556', '2556'],
         ];
     }
 
