@@ -38,17 +38,17 @@ class PostcodeFormatter
         $formatter = $this->getFormatter($country);
 
         if ($formatter === null) {
-            throw new UnknownCountryException('Unknown country: ' . $country);
+            throw new UnknownCountryException($country);
         }
 
         if (preg_match('/^[A-Z0-9]+$/', $postcode) !== 1) {
-            throw new InvalidPostcodeException('Invalid postcode: ' . $postcode);
+            throw new InvalidPostcodeException($postcode, $country);
         }
 
         $formatted = $formatter->format($postcode);
 
         if ($formatted === null) {
-            throw new InvalidPostcodeException('Invalid postcode: ' . $postcode);
+            throw new InvalidPostcodeException($postcode, $country);
         }
 
         return $formatted;
