@@ -21,7 +21,7 @@ class EGFormatter implements CountryPostcodeFormatter
      */
     public function format(string $postcode) : ?string
     {
-        if (preg_match('/^[0-9]{5}$/', $postcode) !== 1) {
+        if (preg_match('/^\d{5}(\d{2})?$/', $postcode) !== 1) {
             return null;
         }
 
