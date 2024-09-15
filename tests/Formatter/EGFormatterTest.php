@@ -35,6 +35,8 @@ class EGFormatterTest extends CountryPostcodeFormatterTest
             ['1234', null],
             ['12345', '12345'],
             ['123456', null],
+            ['1234567', '1234567'],
+            ['12345678', null],
 
             ['A', null],
             ['AB', null],
