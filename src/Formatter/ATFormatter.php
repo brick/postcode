@@ -9,7 +9,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
 /**
  * Validates and formats postcodes in Austria.
  *
- * Postcodes consist of 4 digits, without separator.
+ * Postcodes consist of 4 digits, without separator. The first digit must be 1-9.
  *
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/Postal_codes_in_Austria
