@@ -13,17 +13,11 @@ use Brick\Postcode\Tests\CountryPostcodeFormatterTest;
  */
 class TCFormatterTest extends CountryPostcodeFormatterTest
 {
-    /**
-     * {@inheritdoc}
-     */
     protected function getFormatter() : CountryPostcodeFormatter
     {
         return new TCFormatter();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function providerFormat() : array
     {
         return [

@@ -15,9 +15,6 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 class IOFormatter implements CountryPostcodeFormatter
 {
-    /**
-     * {@inheritdoc}
-     */
     public function format(string $postcode) : ?string
     {
         if ($postcode === 'BBND1ZZ') {

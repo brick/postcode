@@ -16,9 +16,6 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 class BHFormatter implements CountryPostcodeFormatter
 {
-    /**
-     * {@inheritdoc}
-     */
     public function format(string $postcode) : ?string
     {
         if (preg_match('/^(1?[0-9])([0-9]{2})$/', $postcode, $matches) !== 1) {

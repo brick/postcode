@@ -17,9 +17,6 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 class ASFormatter implements CountryPostcodeFormatter
 {
-    /**
-     * {@inheritdoc}
-     */
     public function format(string $postcode) : ?string
     {
         $length = strlen($postcode);

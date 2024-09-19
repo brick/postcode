@@ -18,9 +18,6 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 class CAFormatter implements CountryPostcodeFormatter
 {
-    /**
-     * {@inheritdoc}
-     */
     public function format(string $postcode) : ?string
     {
         if (preg_match('/^([ABCEGHJ-NPRSTV-Z][0-9]){3}$/', $postcode) !== 1) {

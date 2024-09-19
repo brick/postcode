@@ -30,9 +30,6 @@ class JEFormatter implements CountryPostcodeFormatter
         . '([0-9][A-Z][A-Z])'
         . '$/';
 
-    /**
-     * {@inheritdoc}
-     */
     public function format(string $postcode) : ?string
     {
         if (preg_match(self::PATTERN, $postcode, $matches) !== 1) {

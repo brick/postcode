@@ -53,9 +53,6 @@ class GBFormatter implements CountryPostcodeFormatter
      */
     private $patterns = null;
 
-    /**
-     * {@inheritdoc}
-     */
     public function format(string $postcode) : ?string
     {
         // special case
