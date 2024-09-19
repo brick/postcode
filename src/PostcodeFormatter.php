@@ -12,7 +12,7 @@ class PostcodeFormatter
     /**
      * The country postcode formatters, indexed by country code.
      *
-     * @var (CountryPostcodeFormatter|null)[]
+     * @var array<string, CountryPostcodeFormatter|null>
      */
     private array $formatters = [];
 

@@ -51,7 +51,7 @@ class GBFormatter implements CountryPostcodeFormatter
      *
      * @var string[]|null
      */
-    private $patterns = null;
+    private ?array $patterns = null;
 
     public function format(string $postcode) : ?string
     {
