@@ -32,6 +32,7 @@ class ATFormatterTest extends CountryPostcodeFormatterTest
             ['1', null],
             ['12', null],
             ['123', null],
+            ['0123', null],
             ['1234', '1234'],
             ['12345', null],
             ['123456', null],
