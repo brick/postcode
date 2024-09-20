@@ -13,17 +13,11 @@ use Brick\Postcode\Tests\CountryPostcodeFormatterTest;
  */
 class ATFormatterTest extends CountryPostcodeFormatterTest
 {
-    /**
-     * {@inheritdoc}
-     */
     protected function getFormatter() : CountryPostcodeFormatter
     {
         return new ATFormatter();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function providerFormat() : array
     {
         return [
@@ -32,6 +26,7 @@ class ATFormatterTest extends CountryPostcodeFormatterTest
             ['1', null],
             ['12', null],
             ['123', null],
+            ['0123', null],
             ['1234', '1234'],
             ['12345', null],
             ['123456', null],

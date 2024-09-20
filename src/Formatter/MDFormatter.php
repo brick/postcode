@@ -18,9 +18,6 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 class MDFormatter implements CountryPostcodeFormatter
 {
-    /**
-     * {@inheritdoc}
-     */
     public function format(string $postcode) : ?string
     {
         if (substr($postcode, 0, 2) === 'MD') {

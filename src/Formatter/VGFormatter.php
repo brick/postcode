@@ -16,9 +16,6 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 class VGFormatter implements CountryPostcodeFormatter
 {
-    /**
-     * {@inheritdoc}
-     */
     public function format(string $postcode) : ?string
     {
         if (substr($postcode, 0, 2) === 'VG') {

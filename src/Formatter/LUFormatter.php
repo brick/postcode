@@ -17,11 +17,8 @@ use Brick\Postcode\FormatHelper\StripCountryCode;
  */
 class LUFormatter implements CountryPostcodeFormatter
 {
-     use StripCountryCode;
+    use StripCountryCode;
 
-    /**
-     * {@inheritdoc}
-     */
     public function format(string $postcode) : ?string
     {
         $postcode = $this->stripCountryCode($postcode);

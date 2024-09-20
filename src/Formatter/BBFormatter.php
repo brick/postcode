@@ -17,9 +17,6 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 class BBFormatter implements CountryPostcodeFormatter
 {
-    /**
-     * {@inheritdoc}
-     */
     public function format(string $postcode) : ?string
     {
         if (substr($postcode, 0, 2) === 'BB') {

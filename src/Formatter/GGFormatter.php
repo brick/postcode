@@ -22,9 +22,6 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 class GGFormatter implements CountryPostcodeFormatter
 {
-    /**
-     * {@inheritdoc}
-     */
     public function format(string $postcode) : ?string
     {
         if (preg_match('/^(GY[0-9]{1,2})([0-9][A-Z][A-Z])$/', $postcode, $matches) !== 1) {

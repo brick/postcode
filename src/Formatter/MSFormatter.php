@@ -17,9 +17,6 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 class MSFormatter implements CountryPostcodeFormatter
 {
-    /**
-     * {@inheritdoc}
-     */
     public function format(string $postcode) : ?string
     {
         if (substr($postcode, 0, 3) === 'MSR') {

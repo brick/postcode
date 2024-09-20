@@ -18,9 +18,6 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 class ICFormatter implements CountryPostcodeFormatter
 {
-    /**
-     * {@inheritdoc}
-     */
     public function format(string $postcode) : ?string
     {
         if (preg_match('/^(35|38)[0-9]{3}$/', $postcode) !== 1) {

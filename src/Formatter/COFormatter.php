@@ -29,15 +29,11 @@ class COFormatter implements CountryPostcodeFormatter
         '99'
     ];
 
-    /**
-     * {@inheritdoc}
-     */
     public function format(string $postcode) : ?string
     {
         if (preg_match('/^\d{2}(?!0000)\d{4}$/', $postcode) !== 1) {
             return null;
         }
-
 
         $department = substr($postcode, 0, 2);
 

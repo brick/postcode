@@ -52,9 +52,6 @@ class IEFormatter implements CountryPostcodeFormatter
     . '([ACDEFHKNPRTVWXY0-9]{4})'
     . '$/';
 
-    /**
-     * {@inheritdoc}
-     */
     public function format(string $postcode) : ?string
     {
         if (preg_match(self::PATTERN, $postcode, $matches) !== 1) {

@@ -19,9 +19,6 @@ class BEFormatter implements CountryPostcodeFormatter
 {
     use StripCountryCode;
 
-    /**
-     * {@inheritdoc}
-     */
     public function format(string $postcode) : ?string
     {
         $postcode = $this->stripCountryCode($postcode);
