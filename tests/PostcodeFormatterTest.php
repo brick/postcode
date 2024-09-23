@@ -106,4 +106,4 @@ class PostcodeFormatterTest extends TestCase
             ['UnknownCountry', false],
         ];
     }
-}
+} 
