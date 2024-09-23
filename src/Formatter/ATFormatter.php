@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
-use Brick\Postcode\FormatHelper\StripCountryCode;
+use Brick\Postcode\FormatHelper\StripPrefix;
 
 /**
  * Validates and formats postcodes in Austria.
@@ -17,11 +17,11 @@ use Brick\Postcode\FormatHelper\StripCountryCode;
  */
 class ATFormatter implements CountryPostcodeFormatter
 {
-    use StripCountryCode;
+    use StripPrefix;
 
     public function format(string $postcode) : ?string
     {
-        $postcode = $this->stripCountryCode($postcode);
+        $postcode = $this->stripPrefix($postcode, 'A');
 
         if (preg_match('/^[1-9][0-9]{3}$/', $postcode) !== 1) {
 

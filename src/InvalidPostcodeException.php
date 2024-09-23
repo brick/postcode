@@ -36,11 +36,11 @@ class InvalidPostcodeException extends \Exception
     }
 
     /**
-     * Get the country code associated with this exception.
+     * Get the country ISO2 code associated with this exception.
      *
      * @return string
      */
-    public function getCountryCode(): string
+    public function getCountry(): string
     {
         return $this->country;
     }

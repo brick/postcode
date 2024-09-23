@@ -13,20 +13,22 @@ namespace Brick\Postcode\FormatHelper;
  * Thus providing you with the correct format without the country code prefix in it.
  *
  * @see https://en.wikipedia.org/wiki/Postal_codes_in_Belgium
+ *
+ * @internal
  */
-trait StripCountryCode
+trait StripPrefix
 {
     /**
      * @param string $postcode
-     * @param int $validCountryCodeLength
+     * @param string $prefix
      * @return string
      */
-    public function stripCountryCode(string $postcode, int $validCountryCodeLength = 1): string
+    public function stripPrefix(string $postcode, string $prefix): string
     {
-        $code = substr((new \ReflectionClass($this))->getShortName(), 0, $validCountryCodeLength);
+        $prefixLength = strlen($prefix);
 
-        if (substr($postcode, 0, $validCountryCodeLength) === $code) {
-            $postcode = substr($postcode, $validCountryCodeLength);
+        if (substr($postcode, 0, $prefixLength) === $prefix) {
+            $postcode = substr($postcode, $prefixLength);
         }
 
         return $postcode;

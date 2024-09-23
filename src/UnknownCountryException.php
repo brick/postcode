@@ -23,11 +23,11 @@ class UnknownCountryException extends \Exception
     }
 
     /**
-     * Get the unknown country code associated with this exception.
+     * Get the unknown country ISO2 code associated with this exception.
      *
      * @return string
      */
-    public function getCountryCode(): string
+    public function getCountry(): string
     {
         return $this->country;
     }
