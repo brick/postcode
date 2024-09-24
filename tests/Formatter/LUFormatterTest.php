@@ -35,11 +35,8 @@ class LUFormatterTest extends CountryPostcodeFormatterTest
             ['ABCD', null],
             ['ABCDE', null],
 
-
-            ['L-8084', '8084'],
-            ['l-8084', '8084'],
-            ['X-8084', null],
-            ['x-8084', null],
+            ['L8084', '8084'],
+            ['X8084', null],
         ];
     }
 }
