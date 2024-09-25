@@ -24,7 +24,6 @@ class ATFormatter implements CountryPostcodeFormatter
         $postcode = $this->stripPrefix($postcode, 'A');
 
         if (preg_match('/^[1-9][0-9]{3}$/', $postcode) !== 1) {
-
             return null;
         }
 
