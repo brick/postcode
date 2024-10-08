@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
+use Brick\Postcode\FormatHelper\StripPrefix;
 
 /**
  * Validates and formats postcodes in Luxembourg.
@@ -16,8 +17,12 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 class LUFormatter implements CountryPostcodeFormatter
 {
+    use StripPrefix;
+
     public function format(string $postcode) : ?string
     {
+        $postcode = $this->stripPrefix($postcode, 'L');
+
         if (preg_match('/^[0-9]{4}$/', $postcode) !== 1) {
             return null;
         }

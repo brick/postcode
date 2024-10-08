@@ -37,6 +37,9 @@ class ATFormatterTest extends CountryPostcodeFormatterTest
             ['ABCD', null],
             ['ABCDE', null],
             ['ABCDEF', null],
+
+            ['A8084', '8084'],
+            ['X8084', null],
         ];
     }
 }

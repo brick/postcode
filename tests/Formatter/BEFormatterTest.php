@@ -36,6 +36,9 @@ class BEFormatterTest extends CountryPostcodeFormatterTest
             ['ABCD', null],
             ['ABCDE', null],
             ['ABCDEF', null],
+
+            ['B8084', '8084'],
+            ['X8084', null],
         ];
     }
 }
