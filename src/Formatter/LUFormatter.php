@@ -15,7 +15,7 @@ use Brick\Postcode\FormatHelper\StripPrefix;
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/Postal_codes_in_Luxembourg
  */
-class LUFormatter implements CountryPostcodeFormatter
+final class LUFormatter implements CountryPostcodeFormatter
 {
     use StripPrefix;
 

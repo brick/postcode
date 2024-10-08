@@ -26,7 +26,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * @see https://en.wikipedia.org/wiki/Postcodes_in_the_United_Kingdom
  * @see https://en.wikipedia.org/wiki/List_of_postcode_areas_in_the_United_Kingdom
  */
-class GBFormatter implements CountryPostcodeFormatter
+final class GBFormatter implements CountryPostcodeFormatter
 {
     /**
      * The list of valid area codes.

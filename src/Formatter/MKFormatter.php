@@ -14,7 +14,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/Postal_codes_in_the_Republic_of_Macedonia
  */
-class MKFormatter implements CountryPostcodeFormatter
+final class MKFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {

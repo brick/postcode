@@ -36,7 +36,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * @see https://www.eircode.ie/docs/default-source/Common/prepareyourbusinessforeircode-edition3published.pdf
  * @see https://www.autoaddress.ie/support/developer-centre/resources/routing-key-boundaries
  */
-class IEFormatter implements CountryPostcodeFormatter
+final class IEFormatter implements CountryPostcodeFormatter
 {
     /**
      * The regular expression pattern used to validate the postcode and extract the two parts.

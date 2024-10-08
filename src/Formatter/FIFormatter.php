@@ -14,7 +14,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/Postal_codes_in_Finland
  */
-class FIFormatter implements CountryPostcodeFormatter
+final class FIFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {

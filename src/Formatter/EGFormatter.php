@@ -15,7 +15,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes_in_Egypt
  * @see https://www.upu.int/UPU/media/upu/PostalEntitiesFiles/addressingUnit/egyEn.pdf
  */
-class EGFormatter implements CountryPostcodeFormatter
+final class EGFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {

@@ -14,7 +14,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes_in_Nepal
  */
-class NPFormatter implements CountryPostcodeFormatter
+final class NPFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {

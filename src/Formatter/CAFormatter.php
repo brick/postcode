@@ -16,7 +16,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/Postal_codes_in_Canada
  */
-class CAFormatter implements CountryPostcodeFormatter
+final class CAFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {

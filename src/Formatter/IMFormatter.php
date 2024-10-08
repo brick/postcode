@@ -19,7 +19,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/IM_postcode_area
  */
-class IMFormatter implements CountryPostcodeFormatter
+final class IMFormatter implements CountryPostcodeFormatter
 {
     /**
      * The regular expression pattern used to validate the postcode and extract the two parts.

@@ -14,7 +14,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes_in_Spain
  */
-class ESFormatter implements CountryPostcodeFormatter
+final class ESFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {

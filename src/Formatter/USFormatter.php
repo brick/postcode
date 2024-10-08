@@ -16,7 +16,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  *
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  */
-class USFormatter implements CountryPostcodeFormatter
+final class USFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {

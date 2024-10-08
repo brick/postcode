@@ -14,7 +14,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/List_of_ZIP_codes_in_the_Philippines
  */
-class PHFormatter implements CountryPostcodeFormatter
+final class PHFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {

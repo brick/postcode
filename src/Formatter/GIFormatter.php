@@ -14,7 +14,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/Postal_addresses_in_Gibraltar
  */
-class GIFormatter implements CountryPostcodeFormatter
+final class GIFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {

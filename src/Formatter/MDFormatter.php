@@ -16,7 +16,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/Postal_codes_in_Moldova
  */
-class MDFormatter implements CountryPostcodeFormatter
+final class MDFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {

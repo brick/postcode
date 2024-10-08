@@ -14,7 +14,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/Postal_Index_Number
  */
-class INFormatter implements CountryPostcodeFormatter
+final class INFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {

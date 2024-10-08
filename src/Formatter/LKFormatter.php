@@ -14,7 +14,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/Postal_codes_in_Sri_Lanka
  */
-class LKFormatter implements CountryPostcodeFormatter
+final class LKFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {

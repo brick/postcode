@@ -15,7 +15,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/List_of_districts_of_Costa_Rica
  */
-class CRFormatter implements CountryPostcodeFormatter
+final class CRFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {

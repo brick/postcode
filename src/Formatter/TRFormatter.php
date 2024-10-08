@@ -14,7 +14,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/Postal_codes_in_Turkey
  */
-class TRFormatter implements CountryPostcodeFormatter
+final class TRFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {

@@ -15,7 +15,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://es.wikipedia.org/wiki/Anexo:C%C3%B3digos_postales_de_Colombia
  */
-class COFormatter implements CountryPostcodeFormatter
+final class COFormatter implements CountryPostcodeFormatter
 {
     private const DEPARTMENTS = [
         '05', '08', '11', '13',

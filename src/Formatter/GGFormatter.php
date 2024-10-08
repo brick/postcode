@@ -20,7 +20,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/GY_postcode_area
  */
-class GGFormatter implements CountryPostcodeFormatter
+final class GGFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {

@@ -7,7 +7,7 @@ namespace Brick\Postcode;
 /**
  * Formats and validates postcodes.
  */
-class PostcodeFormatter
+final class PostcodeFormatter
 {
     /**
      * The country postcode formatters, indexed by country code.

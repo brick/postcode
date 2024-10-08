@@ -14,7 +14,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes_of_Paraguay
  */
-class PYFormatter implements CountryPostcodeFormatter
+final class PYFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {

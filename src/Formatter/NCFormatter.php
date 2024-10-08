@@ -13,7 +13,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  *
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
  */
-class NCFormatter implements CountryPostcodeFormatter
+final class NCFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {
