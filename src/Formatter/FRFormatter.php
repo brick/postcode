@@ -11,12 +11,19 @@ use Brick\Postcode\CountryPostcodeFormatter;
  *
  * Postcodes consist of 5 digits, without separator.
  *
+ * First two digits indicate the department (region)
+ * 01–95 for metropolitan areas
+ * 96–98 for overseas territories
+ *
  * @see https://en.wikipedia.org/wiki/List_of_postal_codes
+ * @see https://en.wikipedia.org/wiki/Postal_codes_in_France
  */
 final class FRFormatter implements CountryPostcodeFormatter
 {
+
     public function format(string $postcode) : ?string
     {
+
         if (preg_match('/^[0-9]{5}$/', $postcode) !== 1) {
             return null;
         }
