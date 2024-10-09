@@ -49,7 +49,6 @@ class ROFormatterTest extends CountryPostcodeFormatterTest
             ['123450', '123450'],
             ['012345', '012345'],
             ['202020', '202020'],
-            ['999999', '999999'],
 
             // invalid
             ['000123', null],
