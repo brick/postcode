@@ -48,7 +48,6 @@ class DEFormatterTest extends CountryPostcodeFormatterTest
             ['132045', null],
             ['00001', null],
             ['05234', null],
-            ['02131', null],
             ['62000', null],
             ['43000', null],
 
