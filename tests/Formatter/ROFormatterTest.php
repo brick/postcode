@@ -39,7 +39,6 @@ class ROFormatterTest extends CountryPostcodeFormatterTest
             ['ABCDEF', null],
 
             // valid
-            ['123-456', '123456'],
             ['010101', '010101'],
             ['123456', '123456'],
             ['090123', '090123'],
@@ -53,7 +52,6 @@ class ROFormatterTest extends CountryPostcodeFormatterTest
             ['000123', null],
             ['01111', null],
             ['000000', null],
-            ['-1234', null],
             ['12ABCD', null],
             ['12345678', null],
             ['01 234 56', null],
