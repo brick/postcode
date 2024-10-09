@@ -24,7 +24,7 @@ class FRFormatter implements CountryPostcodeFormatter
     public function format(string $postcode) : ?string
     {
 
-        if (preg_match('/^(?:0[1-9]|[1-8]\d|9[0-8])\d{3}$/', $postcode) !== 1) {
+        if (preg_match('/^[0-9]{5}$/', $postcode) !== 1) {
             return null;
         }
 
