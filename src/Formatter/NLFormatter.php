@@ -19,7 +19,7 @@ final class NLFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {
-        if (preg_match('/^([0-9]{4})([A-Z]{2})$/', $postcode, $matches) !== 1) {
+        if (preg_match('/^([1-9][0-9]{3})([A-Z]{2})$/', $postcode, $matches) !== 1) {
             return null;
         }
 

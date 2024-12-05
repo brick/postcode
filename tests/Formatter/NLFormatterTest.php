@@ -23,6 +23,7 @@ class NLFormatterTest extends CountryPostcodeFormatterTest
         return [
             ['', null],
 
+            ['0123AB', null],
             ['1234AB', '1234 AB'],
             ['1234SS', null],
             ['1234SD', null],
