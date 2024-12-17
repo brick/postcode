@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace Brick\Postcode\Tests;
 
 use Brick\Postcode\CountryPostcodeFormatter;
+use Brick\Postcode\InvalidPostcodeException;
+use Brick\Postcode\PostcodeFormatter;
+use Brick\Postcode\UnknownCountryException;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -22,7 +25,23 @@ abstract class CountryPostcodeFormatterTest extends TestCase
      */
     public function testFormat(string $input, ?string $expectedOutput) : void
     {
-        $this->assertSame($expectedOutput, $this->getFormatter()->format($input));
+        $formatter = new PostcodeFormatter();
+        try {
+            $result = $formatter->format($this->getCountry(), $input);
+        } catch (InvalidPostcodeException $e) {
+            $result = null;
+        }
+        $this->assertSame($expectedOutput, $result);
+    }
+
+    /**
+     * Returns the test associated Country ISO2 code
+     *
+     * @return string
+     */
+    public function getCountry() : string
+    {
+        return substr((new \ReflectionClass($this))->getShortName(), 0, 2);
     }
 
     /**
