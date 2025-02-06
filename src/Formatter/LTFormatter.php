@@ -26,7 +26,7 @@ final class LTFormatter implements CountryPostcodeFormatter
         $prefix = false;
 
         if ($length === 7) {
-            if (substr($postcode, 0, 2) !== 'LT') {
+            if (!str_starts_with($postcode, 'LT')) {
                 return null;
             }
 

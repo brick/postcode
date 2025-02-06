@@ -26,7 +26,7 @@ final class MCFormatter implements CountryPostcodeFormatter
             return null;
         }
 
-        if (substr($postcode, 0, 3) !== '980') {
+        if (!str_starts_with($postcode, '980')) {
             return null;
         }
 

@@ -21,7 +21,7 @@ final class LVFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {
-        if (substr($postcode, 0, 2) === 'LV') {
+        if (str_starts_with($postcode, 'LV')) {
             $postcode = substr($postcode, 2);
         }
 

@@ -21,7 +21,7 @@ final class PFFormatter implements CountryPostcodeFormatter
             return null;
         }
 
-        if (substr($postcode, 0, 3) !== '987') {
+        if (!str_starts_with($postcode, '987')) {
             return null;
         }
 

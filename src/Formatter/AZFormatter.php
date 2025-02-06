@@ -19,7 +19,7 @@ final class AZFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {
-        if (substr($postcode, 0, 2) === 'AZ') {
+        if (str_starts_with($postcode, 'AZ')) {
             $postcode = substr($postcode, 2);
         }
 

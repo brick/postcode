@@ -21,7 +21,7 @@ final class TFFormatter implements CountryPostcodeFormatter
             return null;
         }
 
-        if (substr($postcode, 0, 3) !== '984') {
+        if (!str_starts_with($postcode, '984')) {
             return null;
         }
 

@@ -34,7 +34,7 @@ final class CYFormatter implements CountryPostcodeFormatter
             return null;
         }
 
-        if (substr($postcode, 0, 2) !== '99') {
+        if (!str_starts_with($postcode, '99')) {
             return null;
         }
 

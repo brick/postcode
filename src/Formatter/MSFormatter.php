@@ -19,7 +19,7 @@ final class MSFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {
-        if (substr($postcode, 0, 3) === 'MSR') {
+        if (str_starts_with($postcode, 'MSR')) {
             $postcode = substr($postcode, 3);
         }
 

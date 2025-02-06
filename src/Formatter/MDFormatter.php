@@ -20,7 +20,7 @@ final class MDFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {
-        if (substr($postcode, 0, 2) === 'MD') {
+        if (str_starts_with($postcode, 'MD')) {
             $postcode = substr($postcode, 2);
         }
 

@@ -21,7 +21,7 @@ final class SMFormatter implements CountryPostcodeFormatter
             return null;
         }
 
-        if (substr($postcode, 0, 4) !== '4789') {
+        if (!str_starts_with($postcode, '4789')) {
             return null;
         }
 

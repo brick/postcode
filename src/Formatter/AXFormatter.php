@@ -23,7 +23,7 @@ final class AXFormatter implements CountryPostcodeFormatter
         $prefix = false;
 
         if ($length === 7) {
-            if (substr($postcode, 0, 2) !== 'AX') {
+            if (!str_starts_with($postcode, 'AX')) {
                 return null;
             }
 
@@ -37,7 +37,7 @@ final class AXFormatter implements CountryPostcodeFormatter
             return null;
         }
 
-        if (substr($postcode, 0, 2) !== '22') {
+        if (!str_starts_with($postcode, '22')) {
             return null;
         }
 

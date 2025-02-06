@@ -21,7 +21,7 @@ final class GFFormatter implements CountryPostcodeFormatter
             return null;
         }
 
-        if (substr($postcode, 0, 3) !== '973') {
+        if (!str_starts_with($postcode, '973')) {
             return null;
         }
 

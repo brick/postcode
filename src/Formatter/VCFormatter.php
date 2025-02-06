@@ -18,7 +18,7 @@ final class VCFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {
-        if (substr($postcode, 0, 2) === 'VC') {
+        if (str_starts_with($postcode, 'VC')) {
             $postcode = substr($postcode, 2);
         }
 

@@ -22,7 +22,7 @@ final class REFormatter implements CountryPostcodeFormatter
             return null;
         }
 
-        if (substr($postcode, 0, 3) !== '974') {
+        if (!str_starts_with($postcode, '974')) {
             return null;
         }
 

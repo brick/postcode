@@ -19,7 +19,7 @@ final class ADFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {
-        if (substr($postcode, 0, 2) === 'AD') {
+        if (str_starts_with($postcode, 'AD')) {
             $postcode = substr($postcode, 2);
         }
 

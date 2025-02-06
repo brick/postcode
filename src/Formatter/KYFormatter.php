@@ -18,7 +18,7 @@ final class KYFormatter implements CountryPostcodeFormatter
 {
     public function format(string $postcode) : ?string
     {
-        if (substr($postcode, 0, 2) !== 'KY') {
+        if (!str_starts_with($postcode, 'KY')) {
             return null;
         }
 
