@@ -7,6 +7,8 @@ namespace Brick\Postcode\Formatter;
 use Brick\Postcode\CountryPostcodeFormatter;
 use Brick\Postcode\FormatHelper\StripPrefix;
 
+use function preg_match;
+
 /**
  * Validates and formats postcodes in Belgium.
  *
@@ -19,7 +21,7 @@ final class BEFormatter implements CountryPostcodeFormatter
 {
     use StripPrefix;
 
-    public function format(string $postcode) : ?string
+    public function format(string $postcode): ?string
     {
         $postcode = $this->stripPrefix($postcode, 'B');
 

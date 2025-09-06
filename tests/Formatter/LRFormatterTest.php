@@ -13,12 +13,7 @@ use Brick\Postcode\Tests\CountryPostcodeFormatterTest;
  */
 class LRFormatterTest extends CountryPostcodeFormatterTest
 {
-    protected function getFormatter() : CountryPostcodeFormatter
-    {
-        return new LRFormatter();
-    }
-
-    public function providerFormat() : array
+    public function providerFormat(): array
     {
         return [
             ['', null],
@@ -35,5 +30,10 @@ class LRFormatterTest extends CountryPostcodeFormatterTest
             ['ABCD', null],
             ['ABCDE', null],
         ];
+    }
+
+    protected function getFormatter(): CountryPostcodeFormatter
+    {
+        return new LRFormatter();
     }
 }

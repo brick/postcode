@@ -4,6 +4,12 @@ declare(strict_types=1);
 
 namespace Brick\Postcode;
 
+use function array_key_exists;
+use function class_exists;
+use function preg_match;
+use function str_replace;
+use function strtoupper;
+
 /**
  * Formats and validates postcodes.
  */
@@ -25,12 +31,10 @@ final class PostcodeFormatter
      * @param string $country  The ISO 3166-1 alpha-2 country code.
      * @param string $postcode The postcode to format.
      *
-     * @return string
-     *
      * @throws UnknownCountryException
      * @throws InvalidPostcodeException
      */
-    public function format(string $country, string $postcode) : string
+    public function format(string $country, string $postcode): string
     {
         $postcode = str_replace([' ', '-'], '', $postcode);
         $postcode = strtoupper($postcode);
@@ -54,12 +58,7 @@ final class PostcodeFormatter
         return $formatted;
     }
 
-    /**
-     * @param string $country
-     *
-     * @return bool
-     */
-    public function isSupportedCountry(string $country) : bool
+    public function isSupportedCountry(string $country): bool
     {
         return $this->getFormatter($country) !== null;
     }
@@ -69,7 +68,7 @@ final class PostcodeFormatter
      *
      * @return CountryPostcodeFormatter|null The formatter, or null if the country code is unknown.
      */
-    private function getFormatter(string $country) : ?CountryPostcodeFormatter
+    private function getFormatter(string $country): ?CountryPostcodeFormatter
     {
         if (array_key_exists($country, $this->formatters)) {
             return $this->formatters[$country];

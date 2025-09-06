@@ -6,6 +6,8 @@ namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
 
+use function preg_match;
+
 /**
  * Validates and formats the postcodes in the Isle of Man.
  *
@@ -30,7 +32,7 @@ final class IMFormatter implements CountryPostcodeFormatter
         . '([0-9][A-Z][A-Z])'
         . '$/';
 
-    public function format(string $postcode) : ?string
+    public function format(string $postcode): ?string
     {
         if (preg_match(self::PATTERN, $postcode, $matches) !== 1) {
             return null;

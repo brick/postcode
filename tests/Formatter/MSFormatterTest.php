@@ -13,12 +13,7 @@ use Brick\Postcode\Tests\CountryPostcodeFormatterTest;
  */
 class MSFormatterTest extends CountryPostcodeFormatterTest
 {
-    protected function getFormatter() : CountryPostcodeFormatter
-    {
-        return new MSFormatter();
-    }
-
-    public function providerFormat() : array
+    public function providerFormat(): array
     {
         return [
             ['', null],
@@ -60,5 +55,10 @@ class MSFormatterTest extends CountryPostcodeFormatterTest
             ['XMSR1234', null],
             ['MSX1234', null],
         ];
+    }
+
+    protected function getFormatter(): CountryPostcodeFormatter
+    {
+        return new MSFormatter();
     }
 }

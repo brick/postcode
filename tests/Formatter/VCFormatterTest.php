@@ -13,12 +13,7 @@ use Brick\Postcode\Tests\CountryPostcodeFormatterTest;
  */
 class VCFormatterTest extends CountryPostcodeFormatterTest
 {
-    protected function getFormatter() : CountryPostcodeFormatter
-    {
-        return new VCFormatter();
-    }
-
-    public function providerFormat() : array
+    public function providerFormat(): array
     {
         return [
             ['', null],
@@ -44,5 +39,10 @@ class VCFormatterTest extends CountryPostcodeFormatterTest
             ['VC12345', null],
             ['XVC1234', null],
         ];
+    }
+
+    protected function getFormatter(): CountryPostcodeFormatter
+    {
+        return new VCFormatter();
     }
 }

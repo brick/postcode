@@ -6,6 +6,10 @@ namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
 
+use function preg_match;
+use function str_starts_with;
+use function strlen;
+
 /**
  * Validates and formats postcodes in Cyprus.
  *
@@ -18,7 +22,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class CYFormatter implements CountryPostcodeFormatter
 {
-    public function format(string $postcode) : ?string
+    public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]+$/', $postcode) !== 1) {
             return null;
@@ -34,7 +38,7 @@ final class CYFormatter implements CountryPostcodeFormatter
             return null;
         }
 
-        if (!str_starts_with($postcode, '99')) {
+        if (! str_starts_with($postcode, '99')) {
             return null;
         }
 

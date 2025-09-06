@@ -6,6 +6,10 @@ namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
 
+use function preg_match;
+use function strlen;
+use function substr;
+
 /**
  * Validates and formats postcodes in Puerto Rico.
  *
@@ -16,7 +20,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class PRFormatter implements CountryPostcodeFormatter
 {
-    public function format(string $postcode) : ?string
+    public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]+$/', $postcode) !== 1) {
             return null;
@@ -43,12 +47,7 @@ final class PRFormatter implements CountryPostcodeFormatter
         return $zip . '-' . substr($postcode, 5);
     }
 
-    /**
-     * @param string $zip
-     *
-     * @return bool
-     */
-    private function isInRange(string $zip) : bool
+    private function isInRange(string $zip): bool
     {
         if ($zip >= '00600' && $zip <= '00799') {
             return true;

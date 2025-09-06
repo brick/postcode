@@ -6,6 +6,10 @@ namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
 
+use function preg_match;
+use function strlen;
+use function substr;
+
 /**
  * Validates and formats postcodes in Marshall Islands.
  *
@@ -15,7 +19,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class MHFormatter implements CountryPostcodeFormatter
 {
-    public function format(string $postcode) : ?string
+    public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]+$/', $postcode) !== 1) {
             return null;

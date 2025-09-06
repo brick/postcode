@@ -6,6 +6,8 @@ namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
 
+use function preg_match;
+
 /**
  * Validates and formats postcodes in Brunei.
  *
@@ -16,7 +18,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class BNFormatter implements CountryPostcodeFormatter
 {
-    public function format(string $postcode) : ?string
+    public function format(string $postcode): ?string
     {
         if (preg_match('/^[A-Z]{2}[0-9]{4}$/', $postcode, $matches) !== 1) {
             return null;

@@ -13,12 +13,7 @@ use Brick\Postcode\Tests\CountryPostcodeFormatterTest;
  */
 class LCFormatterTest extends CountryPostcodeFormatterTest
 {
-    protected function getFormatter() : CountryPostcodeFormatter
-    {
-        return new LCFormatter();
-    }
-
-    public function providerFormat() : array
+    public function providerFormat(): array
     {
         return [
             ['LC12345', 'LC12 345'],
@@ -48,5 +43,10 @@ class LCFormatterTest extends CountryPostcodeFormatterTest
             ['ABCDEF', null],
             ['ABCDEFG', null],
         ];
+    }
+
+    protected function getFormatter(): CountryPostcodeFormatter
+    {
+        return new LCFormatter();
     }
 }

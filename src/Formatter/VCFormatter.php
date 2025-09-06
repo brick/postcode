@@ -6,6 +6,10 @@ namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
 
+use function preg_match;
+use function str_starts_with;
+use function substr;
+
 /**
  * Validates and formats postcodes in Saint Vincent and the Grenadines.
  *
@@ -16,7 +20,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class VCFormatter implements CountryPostcodeFormatter
 {
-    public function format(string $postcode) : ?string
+    public function format(string $postcode): ?string
     {
         if (str_starts_with($postcode, 'VC')) {
             $postcode = substr($postcode, 2);

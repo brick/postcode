@@ -6,6 +6,8 @@ namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
 
+use function preg_match;
+
 /**
  * Validates and formats postcodes in Egypt.
  *
@@ -17,7 +19,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class EGFormatter implements CountryPostcodeFormatter
 {
-    public function format(string $postcode) : ?string
+    public function format(string $postcode): ?string
     {
         if (preg_match('/^\d{5}(\d{2})?$/', $postcode) !== 1) {
             return null;

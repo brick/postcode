@@ -6,6 +6,10 @@ namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
 
+use function preg_match;
+use function str_starts_with;
+use function substr;
+
 /**
  * Validates and formats postcodes in the Cayman Islands.
  *
@@ -16,9 +20,9 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class KYFormatter implements CountryPostcodeFormatter
 {
-    public function format(string $postcode) : ?string
+    public function format(string $postcode): ?string
     {
-        if (!str_starts_with($postcode, 'KY')) {
+        if (! str_starts_with($postcode, 'KY')) {
             return null;
         }
 

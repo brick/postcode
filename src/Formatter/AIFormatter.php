@@ -16,7 +16,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class AIFormatter implements CountryPostcodeFormatter
 {
-    public function format(string $postcode) : ?string
+    public function format(string $postcode): ?string
     {
         if ($postcode === '2640' || $postcode === 'AI2640') {
             return 'AI-2640';

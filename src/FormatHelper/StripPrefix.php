@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Brick\Postcode\FormatHelper;
 
+use function strlen;
+use function substr;
+
 /**
  * Strip country code prefix from postalcode if it is valid.
  *
@@ -12,17 +15,12 @@ namespace Brick\Postcode\FormatHelper;
  * Rather than failing this format into an exception, this helper class strips the prefix off before validating it,
  * Thus providing you with the correct format without the country code prefix in it.
  *
- * @see https://en.wikipedia.org/wiki/Postal_codes_in_Belgium
- *
  * @internal
+ *
+ * @see https://en.wikipedia.org/wiki/Postal_codes_in_Belgium
  */
 trait StripPrefix
 {
-    /**
-     * @param string $postcode
-     * @param string $prefix
-     * @return string
-     */
     public function stripPrefix(string $postcode, string $prefix): string
     {
         $prefixLength = strlen($prefix);

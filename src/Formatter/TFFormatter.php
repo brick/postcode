@@ -6,6 +6,9 @@ namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
 
+use function preg_match;
+use function str_starts_with;
+
 /**
  * Validates and formats postcodes in French Southern and Antarctic Territories.
  *
@@ -15,13 +18,13 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class TFFormatter implements CountryPostcodeFormatter
 {
-    public function format(string $postcode) : ?string
+    public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]{5}$/', $postcode) !== 1) {
             return null;
         }
 
-        if (!str_starts_with($postcode, '984')) {
+        if (! str_starts_with($postcode, '984')) {
             return null;
         }
 

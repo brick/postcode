@@ -6,6 +6,8 @@ namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
 
+use function preg_match;
+
 /**
  * Validates and formats postcodes in Bhutan.
  *
@@ -15,7 +17,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class BTFormatter implements CountryPostcodeFormatter
 {
-    public function format(string $postcode) : ?string
+    public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]{5}$/', $postcode) !== 1) {
             return null;

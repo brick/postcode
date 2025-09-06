@@ -6,6 +6,9 @@ namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
 
+use function in_array;
+use function preg_match;
+
 /**
  * Validates and formats the postcodes in the United Kingdom of Great Britain and Northern Ireland.
  *
@@ -41,19 +44,18 @@ final class GBFormatter implements CountryPostcodeFormatter
         'WF', 'WN', 'WR', 'WS', 'WV', 'YO', 'ZE',
 
         // non-geographic
-        'BF', 'BX', 'XX'
+        'BF', 'BX', 'XX',
     ];
 
     /**
      * The regular expression patterns, or null if not built yet.
      *
      * @psalm-var non-empty-string[]|null
-     *
      * @var string[]|null
      */
     private ?array $patterns = null;
 
-    public function format(string $postcode) : ?string
+    public function format(string $postcode): ?string
     {
         // special case
         if ($postcode === 'GIR0AA') {
@@ -85,11 +87,11 @@ final class GBFormatter implements CountryPostcodeFormatter
      * - The area code (ex: WC) for additional checks
      * - The inward code (e.g. 9RZ) for formatting
      *
-     * @psalm-return non-empty-string[]
-     *
      * @return string[]
+     *
+     * @psalm-return non-empty-string[]
      */
-    private function getPatterns() : array
+    private function getPatterns(): array
     {
         if ($this->patterns !== null) {
             return $this->patterns;

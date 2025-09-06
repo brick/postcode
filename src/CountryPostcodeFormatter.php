@@ -20,5 +20,5 @@ interface CountryPostcodeFormatter
      *
      * @return string|null The formatted postcode, or NULL if the postcode is invalid.
      */
-    public function format(string $postcode) : ?string;
+    public function format(string $postcode): ?string;
 }

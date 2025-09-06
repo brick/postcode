@@ -6,6 +6,8 @@ namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
 
+use function preg_match;
+
 /**
  * Validates and formats the postcodes in Guernsey.
  *
@@ -22,7 +24,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class GGFormatter implements CountryPostcodeFormatter
 {
-    public function format(string $postcode) : ?string
+    public function format(string $postcode): ?string
     {
         if (preg_match('/^(GY[0-9]{1,2})([0-9][A-Z][A-Z])$/', $postcode, $matches) !== 1) {
             return null;

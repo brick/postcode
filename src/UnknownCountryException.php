@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace Brick\Postcode;
 
+use Exception;
+
 /**
  * Exception thrown when an unknown country code is provided.
  */
-final class UnknownCountryException extends \Exception
+final class UnknownCountryException extends Exception
 {
     protected string $country;
 
     /**
      * Construct exception thrown when an unknown country code is provided.
-     *
-     * @param string $country
      */
     public function __construct(string $country)
     {
@@ -24,8 +24,6 @@ final class UnknownCountryException extends \Exception
 
     /**
      * Get the unknown country ISO2 code associated with this exception.
-     *
-     * @return string
      */
     public function getCountry(): string
     {

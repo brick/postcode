@@ -6,6 +6,10 @@ namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
 
+use function preg_match;
+use function str_starts_with;
+use function substr;
+
 /**
  * Validates and formats postcodes in British Virgin Islands.
  *
@@ -16,7 +20,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class VGFormatter implements CountryPostcodeFormatter
 {
-    public function format(string $postcode) : ?string
+    public function format(string $postcode): ?string
     {
         if (str_starts_with($postcode, 'VG')) {
             $postcode = substr($postcode, 2);

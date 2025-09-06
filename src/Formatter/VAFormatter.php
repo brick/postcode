@@ -15,7 +15,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class VAFormatter implements CountryPostcodeFormatter
 {
-    public function format(string $postcode) : ?string
+    public function format(string $postcode): ?string
     {
         if ($postcode === '00120') {
             return $postcode;

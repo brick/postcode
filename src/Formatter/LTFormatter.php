@@ -6,6 +6,11 @@ namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
 
+use function preg_match;
+use function str_starts_with;
+use function strlen;
+use function substr;
+
 /**
  * Validates and formats postcodes in Lithuania.
  *
@@ -20,13 +25,13 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class LTFormatter implements CountryPostcodeFormatter
 {
-    public function format(string $postcode) : ?string
+    public function format(string $postcode): ?string
     {
         $length = strlen($postcode);
         $prefix = false;
 
         if ($length === 7) {
-            if (!str_starts_with($postcode, 'LT')) {
+            if (! str_starts_with($postcode, 'LT')) {
                 return null;
             }
 

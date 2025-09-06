@@ -15,7 +15,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class TCFormatter implements CountryPostcodeFormatter
 {
-    public function format(string $postcode) : ?string
+    public function format(string $postcode): ?string
     {
         if ($postcode === 'TKCA1ZZ') {
             return 'TKCA 1ZZ';

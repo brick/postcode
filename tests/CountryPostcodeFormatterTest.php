@@ -14,24 +14,13 @@ abstract class CountryPostcodeFormatterTest extends TestCase
 {
     /**
      * @dataProvider providerFormat
-     *
-     * @param string      $input
-     * @param string|null $expectedOutput
-     *
-     * @return void
      */
-    public function testFormat(string $input, ?string $expectedOutput) : void
+    public function testFormat(string $input, ?string $expectedOutput): void
     {
-        $this->assertSame($expectedOutput, $this->getFormatter()->format($input));
+        self::assertSame($expectedOutput, $this->getFormatter()->format($input));
     }
 
-    /**
-     * @return CountryPostcodeFormatter
-     */
-    abstract protected function getFormatter() : CountryPostcodeFormatter;
+    abstract public function providerFormat(): array;
 
-    /**
-     * @return array
-     */
-    abstract public function providerFormat() : array;
+    abstract protected function getFormatter(): CountryPostcodeFormatter;
 }

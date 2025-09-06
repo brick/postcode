@@ -6,6 +6,9 @@ namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
 
+use function preg_match;
+use function substr;
+
 /**
  * Validates and formats postcodes in Canada.
  *
@@ -18,7 +21,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class CAFormatter implements CountryPostcodeFormatter
 {
-    public function format(string $postcode) : ?string
+    public function format(string $postcode): ?string
     {
         if (preg_match('/^([ABCEGHJ-NPRSTV-Z][0-9]){3}$/', $postcode) !== 1) {
             return null;

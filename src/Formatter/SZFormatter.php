@@ -6,6 +6,8 @@ namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
 
+use function preg_match;
+
 /**
  * Validates and formats postcodes in Swaziland.
  *
@@ -15,7 +17,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class SZFormatter implements CountryPostcodeFormatter
 {
-    public function format(string $postcode) : ?string
+    public function format(string $postcode): ?string
     {
         if (preg_match('/^[A-Z][0-9]{3}$/', $postcode, $matches) !== 1) {
             return null;

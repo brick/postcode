@@ -6,6 +6,10 @@ namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
 
+use function in_array;
+use function preg_match;
+use function substr;
+
 /**
  * Validates and formats postcodes in Colombia.
  *
@@ -26,10 +30,10 @@ final class COFormatter implements CountryPostcodeFormatter
         '68', '70', '73', '76',
         '81', '85', '86', '88',
         '91', '94', '95', '97',
-        '99'
+        '99',
     ];
 
-    public function format(string $postcode) : ?string
+    public function format(string $postcode): ?string
     {
         if (preg_match('/^\d{2}(?!0000)\d{4}$/', $postcode) !== 1) {
             return null;
@@ -37,7 +41,7 @@ final class COFormatter implements CountryPostcodeFormatter
 
         $department = substr($postcode, 0, 2);
 
-        if (!in_array($department, self::DEPARTMENTS, true)) {
+        if (! in_array($department, self::DEPARTMENTS, true)) {
             return null;
         }
 

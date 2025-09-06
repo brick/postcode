@@ -6,6 +6,11 @@ namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
 
+use function preg_match;
+use function str_starts_with;
+use function strlen;
+use function substr;
+
 /**
  * Validates and formats postcodes in Åland Islands.
  *
@@ -17,13 +22,13 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class AXFormatter implements CountryPostcodeFormatter
 {
-    public function format(string $postcode) : ?string
+    public function format(string $postcode): ?string
     {
         $length = strlen($postcode);
         $prefix = false;
 
         if ($length === 7) {
-            if (!str_starts_with($postcode, 'AX')) {
+            if (! str_starts_with($postcode, 'AX')) {
                 return null;
             }
 
@@ -37,7 +42,7 @@ final class AXFormatter implements CountryPostcodeFormatter
             return null;
         }
 
-        if (!str_starts_with($postcode, '22')) {
+        if (! str_starts_with($postcode, '22')) {
             return null;
         }
 
