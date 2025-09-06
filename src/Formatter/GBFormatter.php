@@ -50,8 +50,7 @@ final class GBFormatter implements CountryPostcodeFormatter
     /**
      * The regular expression patterns, or null if not built yet.
      *
-     * @psalm-var non-empty-string[]|null
-     * @var string[]|null
+     * @var non-empty-string[]|null
      */
     private ?array $patterns = null;
 
@@ -87,9 +86,7 @@ final class GBFormatter implements CountryPostcodeFormatter
      * - The area code (ex: WC) for additional checks
      * - The inward code (e.g. 9RZ) for formatting
      *
-     * @return string[]
-     *
-     * @psalm-return non-empty-string[]
+     * @return non-empty-string[]
      */
     private function getPatterns(): array
     {
