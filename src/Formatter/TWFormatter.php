@@ -22,6 +22,11 @@ use function substr;
  */
 final class TWFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Acceptable formats are NNN and NNN-NN, N standing for a digit.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]+$/', $postcode) !== 1) {

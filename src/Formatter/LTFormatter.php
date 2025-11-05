@@ -25,6 +25,11 @@ use function substr;
  */
 final class LTFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postal codes in Lithuania since 2005 are 5 digit numeric.';
+    }
+
     public function format(string $postcode): ?string
     {
         $length = strlen($postcode);

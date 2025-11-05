@@ -20,6 +20,11 @@ use function substr;
  */
 final class PRFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Puerto Rico is allocated the US ZIP codes 00600 to 00799 and 00900 to 00999.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]+$/', $postcode) !== 1) {

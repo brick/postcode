@@ -15,6 +15,11 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class BLFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'This country uses a single postcode, 97133.';
+    }
+
     public function format(string $postcode): ?string
     {
         if ($postcode === '97133') {

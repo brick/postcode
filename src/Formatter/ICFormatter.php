@@ -20,6 +20,11 @@ use function preg_match;
  */
 final class ICFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postcodes consist of 5 digits, without separator, and start with 35 (Las Palmas) or 38 (Santa Cruz de Tenerife).';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^(35|38)[0-9]{3}$/', $postcode) !== 1) {

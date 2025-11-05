@@ -18,6 +18,11 @@ use function str_starts_with;
  */
 final class TFFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'French codes in the 98400 range have been reserved, but do not seem to be in use at the moment.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]{5}$/', $postcode) !== 1) {

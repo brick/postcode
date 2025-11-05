@@ -32,6 +32,11 @@ final class JEFormatter implements CountryPostcodeFormatter
         . '([0-9][A-Z][A-Z])'
         . '$/';
 
+    public function hint(): string
+    {
+        return 'Postcodes can have two different formats:';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match(self::PATTERN, $postcode, $matches) !== 1) {

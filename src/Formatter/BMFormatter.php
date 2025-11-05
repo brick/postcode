@@ -18,6 +18,11 @@ use function preg_match;
  */
 final class BMFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postcode formats are AA NN for street addresses, AA AA for P.O. Box addresses (A=letter, N=digit).';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^([A-Z]{2})([A-Z]{2}|[0-9]{2})$/', $postcode, $matches) !== 1) {

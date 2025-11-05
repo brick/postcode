@@ -18,6 +18,11 @@ use function preg_match;
  */
 final class SGFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postal codes in Singapore consist of six digits, no separator.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]{6}$/', $postcode) !== 1) {

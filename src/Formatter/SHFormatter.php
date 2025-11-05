@@ -17,6 +17,11 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class SHFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Saint Helena uses one code STHL 1ZZ';
+    }
+
     public function format(string $postcode): ?string
     {
         if ($postcode === 'STHL1ZZ') {

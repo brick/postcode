@@ -15,14 +15,17 @@ final class InvalidPostcodeException extends Exception
 
     protected string $country;
 
+    protected string $hint;
+
     /**
      * Construct exception thrown when trying to format an invalid postcode.
      */
-    public function __construct(string $postcode, string $country)
+    public function __construct(string $postcode, string $country, string $hint)
     {
         parent::__construct('Invalid postcode: ' . $postcode);
         $this->postcode = $postcode;
         $this->country = $country;
+        $this->hint = $hint;
     }
 
     /**
@@ -39,5 +42,13 @@ final class InvalidPostcodeException extends Exception
     public function getCountry(): string
     {
         return $this->country;
+    }
+
+    /**
+     * Get the hint associated with this exception.
+     */
+    public function getHint(): string
+    {
+        return $this->hint;
     }
 }

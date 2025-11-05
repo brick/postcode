@@ -54,6 +54,11 @@ final class IEFormatter implements CountryPostcodeFormatter
         . '([ACDEFHKNPRTVWXY0-9]{4})'
         . '$/';
 
+    public function hint(): string
+    {
+        return 'Postcodes can have at least the following thirteen different formats:';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match(self::PATTERN, $postcode, $matches) !== 1) {

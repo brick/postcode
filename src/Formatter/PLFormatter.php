@@ -23,6 +23,11 @@ use function substr;
  */
 final class PLFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postcodes consist of 5 digits in the following format: xy-zzz.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]{5}$/', $postcode) !== 1) {

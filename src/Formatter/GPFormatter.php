@@ -17,6 +17,11 @@ use function preg_match;
  */
 final class GPFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postcode format is 971NN, where N stands for a digit.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^971[0-9]{2}$/', $postcode) !== 1) {

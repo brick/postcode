@@ -18,6 +18,11 @@ use function preg_match;
  */
 final class RSFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Serbian postal codes consist of five digits.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]{5}$/', $postcode) !== 1) {

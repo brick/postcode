@@ -19,6 +19,11 @@ use function preg_match;
  */
 final class EGFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postcodes consist of 5 or 7 digits, without separator.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^\d{5}(\d{2})?$/', $postcode) !== 1) {

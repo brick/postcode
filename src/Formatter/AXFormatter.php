@@ -22,6 +22,11 @@ use function substr;
  */
 final class AXFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postcodes consist of 5 digits, starting with 22.';
+    }
+
     public function format(string $postcode): ?string
     {
         $length = strlen($postcode);

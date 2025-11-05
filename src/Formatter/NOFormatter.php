@@ -18,6 +18,11 @@ use function preg_match;
  */
 final class NOFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Norwegian Postal Codes are 4-digit codes.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]{4}$/', $postcode) !== 1) {

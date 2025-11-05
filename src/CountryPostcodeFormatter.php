@@ -21,4 +21,11 @@ interface CountryPostcodeFormatter
      * @return string|null The formatted postcode, or NULL if the postcode is invalid.
      */
     public function format(string $postcode): ?string;
+
+    /**
+     * Returns a hint describing the expected postcode format for this country.
+     *
+     * @return string A hint describing the expected postcode format.
+     */
+    public function hint(): string;
 }

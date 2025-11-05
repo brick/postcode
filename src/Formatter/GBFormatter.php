@@ -54,6 +54,11 @@ final class GBFormatter implements CountryPostcodeFormatter
      */
     private ?array $patterns = null;
 
+    public function hint(): string
+    {
+        return 'Postcodes can have six different formats: A9 9AA, A9A 9AA, A99 9AA, AA9 9AA, AA9A 9AA, AA99 9AA. A stands for a capital letter, 9 stands for a digit.';
+    }
+
     public function format(string $postcode): ?string
     {
         // special case

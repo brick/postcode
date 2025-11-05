@@ -21,6 +21,11 @@ final class LUFormatter implements CountryPostcodeFormatter
 {
     use StripPrefix;
 
+    public function hint(): string
+    {
+        return 'Postcodes consist of 4 digits, without separator.';
+    }
+
     public function format(string $postcode): ?string
     {
         $postcode = $this->stripPrefix($postcode, 'L');

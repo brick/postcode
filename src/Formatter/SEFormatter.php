@@ -20,6 +20,11 @@ use function substr_replace;
  */
 final class SEFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postcode format is NNN NN. The lowest number is 100 00 and the highest number is 984 99.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]{5}$/', $postcode) !== 1) {

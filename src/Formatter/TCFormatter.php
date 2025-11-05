@@ -15,6 +15,11 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class TCFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'This country uses a single postcode for all addresses: TKCA1ZZ.';
+    }
+
     public function format(string $postcode): ?string
     {
         if ($postcode === 'TKCA1ZZ') {

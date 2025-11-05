@@ -18,6 +18,11 @@ use function preg_match;
  */
 final class NGFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postal codes in Nigeria are numeric, consisting of six digits.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]{6}$/', $postcode) !== 1) {

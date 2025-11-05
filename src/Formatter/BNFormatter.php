@@ -18,6 +18,11 @@ use function preg_match;
  */
 final class BNFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postcode format is two letters followed by 4 digits, without separator.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[A-Z]{2}[0-9]{4}$/', $postcode, $matches) !== 1) {

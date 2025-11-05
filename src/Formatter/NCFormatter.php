@@ -17,6 +17,11 @@ use function preg_match;
  */
 final class NCFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Overseas Collectivity of France. French codes used. Range 98800 - 98890.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]{5}$/', $postcode) !== 1) {

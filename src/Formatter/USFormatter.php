@@ -22,6 +22,11 @@ use function substr;
  */
 final class USFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postcodes in the USA are called ZIP codes.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]+$/', $postcode) !== 1) {

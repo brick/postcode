@@ -21,6 +21,11 @@ use function substr;
  */
 final class CRFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postal codes in Costa Rica are 5 digit numeric.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]+$/', $postcode) !== 1) {

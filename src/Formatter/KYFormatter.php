@@ -20,6 +20,11 @@ use function substr;
  */
 final class KYFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postcode format is KYN-NNNN, where N are digits. The first digit can only be 1 to 3.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (! str_starts_with($postcode, 'KY')) {

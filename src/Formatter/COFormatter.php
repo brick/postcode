@@ -33,6 +33,11 @@ final class COFormatter implements CountryPostcodeFormatter
         '99',
     ];
 
+    public function hint(): string
+    {
+        return 'Postal codes in Colombia are 6 digit numeric.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^\d{2}(?!0000)\d{4}$/', $postcode) !== 1) {

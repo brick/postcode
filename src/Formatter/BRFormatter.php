@@ -20,6 +20,11 @@ use function substr;
  */
 final class BRFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Format is 5 digits, hyphen, 3 digits.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]{8}$/', $postcode) !== 1) {

@@ -17,6 +17,11 @@ use function preg_match;
  */
 final class LCFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'The postcode format is LCNN NNN, N standing for a digit.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^(LC[0-9]{2})([0-9]{3})$/', $postcode, $matches) !== 1) {

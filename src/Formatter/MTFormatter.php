@@ -18,6 +18,11 @@ use function preg_match;
  */
 final class MTFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postcode format is AAA NNNN, A standing for a letter and N standing for a digit.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^([A-Z]{3})([0-9]{4})$/', $postcode, $matches) !== 1) {

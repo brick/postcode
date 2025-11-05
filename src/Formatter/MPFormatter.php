@@ -20,6 +20,11 @@ use function substr;
  */
 final class MPFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'U.S. ZIP codes. Range 96950 - 96952.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]+$/', $postcode) !== 1) {

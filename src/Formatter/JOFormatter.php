@@ -18,6 +18,11 @@ use function preg_match;
  */
 final class JOFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postcodes consist of 5 digits, without separator. According to Wikipedia, postcodes are used for deliveries to PO Boxes only.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]{5}$/', $postcode) !== 1) {

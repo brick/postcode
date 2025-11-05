@@ -18,6 +18,11 @@ use function preg_match;
  */
 final class MKFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postal codes in the Republic of Macedonia are 4 digits in length.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]{4}$/', $postcode) !== 1) {

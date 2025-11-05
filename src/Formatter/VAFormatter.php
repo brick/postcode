@@ -15,6 +15,11 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class VAFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Single code used for all addresses. Part of the Italian postal code system.';
+    }
+
     public function format(string $postcode): ?string
     {
         if ($postcode === '00120') {
