@@ -32,6 +32,11 @@ final class IMFormatter implements CountryPostcodeFormatter
         . '([0-9][A-Z][A-Z])'
         . '$/';
 
+    public function hint(): string
+    {
+        return 'Postcodes can have two different formats: IM9 9AA or IM99 9AA. A stands for a capital letter, 9 stands for a digit.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match(self::PATTERN, $postcode, $matches) !== 1) {

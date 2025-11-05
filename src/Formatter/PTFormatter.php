@@ -19,6 +19,11 @@ use function substr;
  */
 final class PTFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postcode format is NNNN-NNN, N standing for a digit.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]{7}$/', $postcode) !== 1) {

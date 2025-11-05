@@ -15,6 +15,11 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class PNFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'This country uses a single postcode for all addresses.';
+    }
+
     public function format(string $postcode): ?string
     {
         if ($postcode === 'PCRN1ZZ') {

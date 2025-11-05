@@ -19,6 +19,11 @@ use function substr;
  */
 final class PWFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'U.S. ZIP codes. All locations 96940.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]+$/', $postcode) !== 1) {

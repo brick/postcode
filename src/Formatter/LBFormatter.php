@@ -18,6 +18,11 @@ use function substr;
  */
 final class LBFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postcode format is NNNN NNNN, where N stands for a digit.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]{8}$/', $postcode) !== 1) {

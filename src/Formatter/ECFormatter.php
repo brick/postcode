@@ -18,6 +18,11 @@ use function preg_match;
  */
 final class ECFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postal codes in Ecuador have six numeric digits.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]{6}$/', $postcode) !== 1) {

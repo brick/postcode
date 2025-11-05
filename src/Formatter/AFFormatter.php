@@ -23,6 +23,11 @@ use function substr;
  */
 final class AFFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postcodes consist of 4 digits, without separator.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]{4}$/', $postcode) !== 1) {

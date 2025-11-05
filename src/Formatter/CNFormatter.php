@@ -19,6 +19,11 @@ use function preg_match;
  */
 final class CNFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'China Post uses a six-digit all-numerical system, without separator.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]{6}$/', $postcode) !== 1) {

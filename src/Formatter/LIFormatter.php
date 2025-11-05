@@ -18,6 +18,11 @@ use function preg_match;
  */
 final class LIFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postcodes consist of 4 digits, without separator, range 9485 to 9498.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]{4}$/', $postcode) !== 1) {

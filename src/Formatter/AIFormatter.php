@@ -16,6 +16,11 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class AIFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Anguilla uses a single postcode for all addresses.';
+    }
+
     public function format(string $postcode): ?string
     {
         if ($postcode === '2640' || $postcode === 'AI2640') {

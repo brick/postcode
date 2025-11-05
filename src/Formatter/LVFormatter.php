@@ -23,6 +23,11 @@ use function substr;
  */
 final class LVFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postal codes in Latvia are 4 digit numeric and use a mandatory country code (LV) in front.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (str_starts_with($postcode, 'LV')) {

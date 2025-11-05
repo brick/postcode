@@ -46,13 +46,13 @@ final class PostcodeFormatter
         }
 
         if (preg_match('/^[A-Z0-9]+$/', $postcode) !== 1) {
-            throw new InvalidPostcodeException($postcode, $country);
+            throw new InvalidPostcodeException($postcode, $country, $formatter->hint());
         }
 
         $formatted = $formatter->format($postcode);
 
         if ($formatted === null) {
-            throw new InvalidPostcodeException($postcode, $country);
+            throw new InvalidPostcodeException($postcode, $country, $formatter->hint());
         }
 
         return $formatted;

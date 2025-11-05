@@ -21,6 +21,11 @@ use function substr;
  */
 final class CAFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'The format is ANA NAN, where A is a letter and N is a digit.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^([ABCEGHJ-NPRSTV-Z][0-9]){3}$/', $postcode) !== 1) {

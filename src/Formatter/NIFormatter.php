@@ -18,6 +18,11 @@ use function preg_match;
  */
 final class NIFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postal codes in Nicaragua are 5 digit numeric.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]{5}$/', $postcode) !== 1) {

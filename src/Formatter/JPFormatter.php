@@ -19,6 +19,11 @@ use function substr;
  */
 final class JPFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postcodes format is NNN-NNNN, where N stands for a digit.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]{7}$/', $postcode) !== 1) {

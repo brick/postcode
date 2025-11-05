@@ -18,6 +18,11 @@ use function preg_match;
  */
 final class ARFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'The postcode is either 4 digits, or 1 letter + 4 digits + 3 letters, with no separators.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^(([0-9]{4})|([A-Z][0-9]{4}[A-Z]{3}))$/', $postcode) !== 1) {

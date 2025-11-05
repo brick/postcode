@@ -21,6 +21,11 @@ use function substr;
  */
 final class ADFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postcodes consist of the letters AD, followed by 3 digits, without separator.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (str_starts_with($postcode, 'AD')) {

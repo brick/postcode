@@ -21,6 +21,11 @@ use function substr;
  */
 final class AZFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'The postcode format is AZ NNNN, where N represents a digit.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (str_starts_with($postcode, 'AZ')) {

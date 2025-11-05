@@ -21,6 +21,11 @@ use function substr;
  */
 final class ASFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Mail service in American Samoa is fully integrated with the United States Postal Service.';
+    }
+
     public function format(string $postcode): ?string
     {
         $length = strlen($postcode);

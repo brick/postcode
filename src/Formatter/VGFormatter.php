@@ -20,6 +20,11 @@ use function substr;
  */
 final class VGFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'The postcode format is VG followed by 4 digits, specifically VG1110 through VG1160.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (str_starts_with($postcode, 'VG')) {

@@ -21,6 +21,11 @@ use function substr;
  */
 final class MSFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'The format is MSR followed by a space then 4 digits, in the range 1110 to 1350.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (str_starts_with($postcode, 'MSR')) {

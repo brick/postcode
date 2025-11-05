@@ -19,6 +19,11 @@ use function substr;
  */
 final class SAFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'The postcode format is NNNNN for PO Boxes and NNNNN-NNNN for home delivery, N standing for a digit.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (preg_match('/^[0-9]+$/', $postcode) !== 1) {

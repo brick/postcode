@@ -20,6 +20,11 @@ use function substr;
  */
 final class VCFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'The postcode format is VCNNNN, where N represents a digit.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (str_starts_with($postcode, 'VC')) {

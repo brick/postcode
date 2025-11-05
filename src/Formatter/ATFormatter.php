@@ -21,6 +21,11 @@ final class ATFormatter implements CountryPostcodeFormatter
 {
     use StripPrefix;
 
+    public function hint(): string
+    {
+        return 'Postcodes consist of 4 digits, without separator. The first digit must be 1-9.';
+    }
+
     public function format(string $postcode): ?string
     {
         $postcode = $this->stripPrefix($postcode, 'A');

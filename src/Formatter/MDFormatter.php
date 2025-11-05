@@ -22,6 +22,11 @@ use function substr;
  */
 final class MDFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'The postcode format is MD-NNNN, where N stands for a digit.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (str_starts_with($postcode, 'MD')) {

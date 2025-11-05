@@ -21,6 +21,11 @@ use function substr;
  */
 final class BBFormatter implements CountryPostcodeFormatter
 {
+    public function hint(): string
+    {
+        return 'Postal codes in Barbados are 5 digit numeric, with BB prefix.';
+    }
+
     public function format(string $postcode): ?string
     {
         if (str_starts_with($postcode, 'BB')) {
