@@ -6,6 +6,7 @@ namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
 use Brick\Postcode\FormatHelper\StripPrefix;
+use Override;
 
 use function preg_match;
 
@@ -21,6 +22,7 @@ final class LUFormatter implements CountryPostcodeFormatter
 {
     use StripPrefix;
 
+    #[Override]
     public function format(string $postcode): ?string
     {
         $postcode = $this->stripPrefix($postcode, 'L');

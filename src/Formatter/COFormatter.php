@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
+use Override;
 
 use function in_array;
 use function preg_match;
@@ -33,6 +34,7 @@ final class COFormatter implements CountryPostcodeFormatter
         '99',
     ];
 
+    #[Override]
     public function format(string $postcode): ?string
     {
         if (preg_match('/^\d{2}(?!0000)\d{4}$/', $postcode) !== 1) {

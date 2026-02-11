@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
+use Override;
 
 /**
  * Validates and formats postcodes in Saint Helena, Ascension and Tristan da Cunha.
@@ -17,6 +18,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class SHFormatter implements CountryPostcodeFormatter
 {
+    #[Override]
     public function format(string $postcode): ?string
     {
         if ($postcode === 'STHL1ZZ') {

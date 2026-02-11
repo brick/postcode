@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
+use Override;
 
 use function preg_match;
 
@@ -17,6 +18,7 @@ use function preg_match;
  */
 final class LCFormatter implements CountryPostcodeFormatter
 {
+    #[Override]
     public function format(string $postcode): ?string
     {
         if (preg_match('/^(LC[0-9]{2})([0-9]{3})$/', $postcode, $matches) !== 1) {

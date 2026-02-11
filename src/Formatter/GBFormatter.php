@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
+use Override;
 
 use function in_array;
 use function preg_match;
@@ -54,6 +55,7 @@ final class GBFormatter implements CountryPostcodeFormatter
      */
     private ?array $patterns = null;
 
+    #[Override]
     public function format(string $postcode): ?string
     {
         // special case

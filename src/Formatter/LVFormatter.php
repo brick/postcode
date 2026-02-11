@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
+use Override;
 
 use function preg_match;
 use function str_starts_with;
@@ -23,6 +24,7 @@ use function substr;
  */
 final class LVFormatter implements CountryPostcodeFormatter
 {
+    #[Override]
     public function format(string $postcode): ?string
     {
         if (str_starts_with($postcode, 'LV')) {

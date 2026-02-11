@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
+use Override;
 
 use function preg_match;
 
@@ -32,6 +33,7 @@ final class IMFormatter implements CountryPostcodeFormatter
         . '([0-9][A-Z][A-Z])'
         . '$/';
 
+    #[Override]
     public function format(string $postcode): ?string
     {
         if (preg_match(self::PATTERN, $postcode, $matches) !== 1) {

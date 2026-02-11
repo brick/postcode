@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
+use Override;
 
 use function preg_match;
 
@@ -54,6 +55,7 @@ final class IEFormatter implements CountryPostcodeFormatter
         . '([ACDEFHKNPRTVWXY0-9]{4})'
         . '$/';
 
+    #[Override]
     public function format(string $postcode): ?string
     {
         if (preg_match(self::PATTERN, $postcode, $matches) !== 1) {

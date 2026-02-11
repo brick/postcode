@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
+use Override;
 
 /**
  * Validates and formats postcodes in Anguilla.
@@ -16,6 +17,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class AIFormatter implements CountryPostcodeFormatter
 {
+    #[Override]
     public function format(string $postcode): ?string
     {
         if ($postcode === '2640' || $postcode === 'AI2640') {

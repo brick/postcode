@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
+use Override;
 
 /**
  * Validates and formats postcodes in South Georgia and the South Sandwich Islands.
@@ -15,6 +16,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class GSFormatter implements CountryPostcodeFormatter
 {
+    #[Override]
     public function format(string $postcode): ?string
     {
         if ($postcode === 'SIQQ1ZZ') {

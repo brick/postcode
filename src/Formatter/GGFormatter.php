@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
+use Override;
 
 use function preg_match;
 
@@ -24,6 +25,7 @@ use function preg_match;
  */
 final class GGFormatter implements CountryPostcodeFormatter
 {
+    #[Override]
     public function format(string $postcode): ?string
     {
         if (preg_match('/^(GY[0-9]{1,2})([0-9][A-Z][A-Z])$/', $postcode, $matches) !== 1) {

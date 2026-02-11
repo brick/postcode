@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
+use Override;
 
 use function preg_match;
 
@@ -19,6 +20,7 @@ use function preg_match;
  */
 final class EGFormatter implements CountryPostcodeFormatter
 {
+    #[Override]
     public function format(string $postcode): ?string
     {
         if (preg_match('/^\d{5}(\d{2})?$/', $postcode) !== 1) {

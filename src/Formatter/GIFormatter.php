@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Brick\Postcode\Formatter;
 
 use Brick\Postcode\CountryPostcodeFormatter;
+use Override;
 
 /**
  * Validates and formats postcodes in Gibraltar.
@@ -16,6 +17,7 @@ use Brick\Postcode\CountryPostcodeFormatter;
  */
 final class GIFormatter implements CountryPostcodeFormatter
 {
+    #[Override]
     public function format(string $postcode): ?string
     {
         if ($postcode === 'GX111AA') {
