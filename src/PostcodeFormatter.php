@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Brick\Postcode;
 
+use Brick\Postcode\Exception\InvalidPostcodeException;
+use Brick\Postcode\Exception\UnknownCountryException;
+
 use function array_key_exists;
 use function class_exists;
 use function preg_match;

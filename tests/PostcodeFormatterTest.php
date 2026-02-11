@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Brick\Postcode\Tests;
 
-use Brick\Postcode\InvalidPostcodeException;
+use Brick\Postcode\Exception\InvalidPostcodeException;
+use Brick\Postcode\Exception\UnknownCountryException;
 use Brick\Postcode\PostcodeFormatter;
-use Brick\Postcode\UnknownCountryException;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
