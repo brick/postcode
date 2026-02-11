@@ -23,6 +23,8 @@ class PYFormatterTest extends CountryPostcodeFormatterTest
             ['123', null],
             ['1234', '1234'],
             ['12345', null],
+            ['123456', '123456'],
+            ['1234567', null],
 
             ['A', null],
             ['AB', null],
