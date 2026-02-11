@@ -36,7 +36,7 @@ The current releases are numbered `0.x.y`. When a non-breaking change is introdu
 
 **When a breaking change is introduced, a new `0.x` version cycle is always started.**
 
-It is therefore safe to lock your project to a given release cycle, such as `0.5.*`.
+It is therefore safe to lock your project to a given release cycle, such as `0.6.*`.
 
 If you need to upgrade to a newer release cycle, check the [release history](https://github.com/brick/postcode/releases) for a list of changes introduced by each further `0.x.0` version.
 
@@ -60,7 +60,7 @@ Misplaced or mismatched separators are not considered an error and will be ignor
   $formatter->format('GB', 'WC-2E9RZ'); // WC2E 9RZ
   ```
 
-* If `format()` is called with an unknown country code, an [UnknownCountryException](https://github.com/brick/postcode/blob/master/src/UnknownCountryException.php) is thrown:
+* If `format()` is called with an unknown country code, an [UnknownCountryException](https://github.com/brick/postcode/blob/0.6.0/src/Exception/UnknownCountryException.php) is thrown:
 
   ```php
   $formatter->format('XX', '12345'); // UnknownCountryException
@@ -68,7 +68,7 @@ Misplaced or mismatched separators are not considered an error and will be ignor
 
   Note that a country with no postcode system is considered as unknown, even if the country code is a valid ISO 3166 code.
 
-* If `format()` is called with an invalid postcode for the given country, an [InvalidPostcodeException](https://github.com/brick/postcode/blob/master/src/InvalidPostcodeException.php) is thrown:
+* If `format()` is called with an invalid postcode for the given country, an [InvalidPostcodeException](https://github.com/brick/postcode/blob/0.6.0/src/Exception/InvalidPostcodeException.php) is thrown:
 
   ```php
   $formatter->format('GB', 'ABCDEFG'); // InvalidPostcodeException
