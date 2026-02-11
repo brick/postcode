@@ -13,7 +13,7 @@ use Brick\Postcode\Tests\CountryPostcodeFormatterTest;
  */
 class SZFormatterTest extends CountryPostcodeFormatterTest
 {
-    public function providerFormat(): array
+    public static function providerFormat(): array
     {
         return [
             ['', null],

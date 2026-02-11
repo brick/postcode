@@ -13,7 +13,7 @@ use Brick\Postcode\Tests\CountryPostcodeFormatterTest;
  */
 class NGFormatterTest extends CountryPostcodeFormatterTest
 {
-    public function providerFormat(): array
+    public static function providerFormat(): array
     {
         return [
             ['', null],

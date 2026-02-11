@@ -7,6 +7,7 @@ namespace Brick\Postcode\Tests;
 use Brick\Postcode\InvalidPostcodeException;
 use Brick\Postcode\PostcodeFormatter;
 use Brick\Postcode\UnknownCountryException;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -22,9 +23,7 @@ class PostcodeFormatterTest extends TestCase
         $formatter->format('XX', '');
     }
 
-    /**
-     * @dataProvider providerFormatInvalidPostcode
-     */
+    #[DataProvider('providerFormatInvalidPostcode')]
     public function testFormatInvalidPostcode(string $country, string $postcode): void
     {
         $formatter = new PostcodeFormatter();
@@ -33,7 +32,7 @@ class PostcodeFormatterTest extends TestCase
         $formatter->format($country, $postcode);
     }
 
-    public function providerFormatInvalidPostcode(): array
+    public static function providerFormatInvalidPostcode(): array
     {
         return [
             ['FR', ''],
@@ -43,9 +42,7 @@ class PostcodeFormatterTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider providerFormat
-     */
+    #[DataProvider('providerFormat')]
     public function testFormat(string $country, string $postcode, string $expectedOutput): void
     {
         $formatter = new PostcodeFormatter();
@@ -53,7 +50,7 @@ class PostcodeFormatterTest extends TestCase
         self::assertSame($expectedOutput, $formatter->format($country, $postcode));
     }
 
-    public function providerFormat(): array
+    public static function providerFormat(): array
     {
         return [
             ['GB', 'WC2E9RZ', 'WC2E 9RZ'],
@@ -62,16 +59,14 @@ class PostcodeFormatterTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider providerIsSupportedCountry
-     */
+    #[DataProvider('providerIsSupportedCountry')]
     public function testIsSupportedCountry(string $country, bool $isSupported): void
     {
         $formatter = new PostcodeFormatter();
         self::assertSame($isSupported, $formatter->isSupportedCountry($country));
     }
 
-    public function providerIsSupportedCountry(): array
+    public static function providerIsSupportedCountry(): array
     {
         return [
             ['fr', true],

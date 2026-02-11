@@ -1,6 +1,6 @@
 /vendor
 /composer.lock
-/.phpunit.result.cache
+/.phpunit.cache/
 
 /tools/*
 !/tools/ecs/composer.json
