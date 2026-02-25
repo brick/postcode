@@ -22,7 +22,7 @@ class LBFormatterTest extends CountryPostcodeFormatterTest
             ['12', null],
             ['012', null],
             ['123', null],
-            ['1234', null],
+            ['1234', '1234'],
             ['01234', null],
             ['12345', null],
             ['123456', null],
