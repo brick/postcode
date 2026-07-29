@@ -26,7 +26,8 @@ class SEFormatterTest extends CountryPostcodeFormatterTest
             ['10000', '100 00'],
             ['12345', '123 45'],
             ['98499', '984 99'],
-            ['98500', null],
+            ['98531', '985 31'],
+            ['98631', '986 31'],
             ['123456', null],
 
             ['A', null],
