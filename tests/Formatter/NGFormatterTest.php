@@ -33,6 +33,17 @@ class NGFormatterTest extends CountryPostcodeFormatterTest
             ['ABCDE', null],
             ['ABCDEF', null],
             ['ABCDEFG', null],
+
+            ['EK01A03FK01', 'EK-01-A03-FK-01'],
+            ['FC03B06AG12', 'FC-03-B06-AG-12'],
+            ['LA99ZZZTC99', 'LA-99-ZZZ-TC-99'],
+            ['EK00A03FK01', null],
+            ['EK01A03FK00', null],
+            ['EK01A03FK1', null],
+            ['EK01A03FK011', null],
+            ['E101A03FK01', null],
+            ['EKA1A03FK01', null],
+            ['EK01A03F101', null],
         ];
     }
 
